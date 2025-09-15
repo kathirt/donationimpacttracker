@@ -5,19 +5,29 @@ import { FilterBar } from './FilterBar';
 import { ImpactChart } from './ImpactChart';
 import { RecentActivities } from './RecentActivities';
 import { ImpactNarrative } from './ImpactNarrative';
+import { api } from '../services/api';
 import './Dashboard.css';
 
 export const Dashboard: React.FC = () => {
   const [impactSummary, setImpactSummary] = useState<ImpactSummary | null>(null);
   const [filters, setFilters] = useState<FilterOptions>({});
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // Simulate API call to fetch impact summary
     const fetchImpactSummary = async () => {
       try {
         setLoading(true);
-        // TODO: Replace with actual API call
+        setError(null);
+        
+        // Try to fetch real data from API
+        const summary = await api.impact.getImpactSummary(filters);
+        setImpactSummary(summary);
+      } catch (error) {
+        console.error('Error fetching impact summary:', error);
+        setError('Failed to load impact data. Using sample data.');
+        
+        // Fallback to mock data if API fails
         const mockSummary: ImpactSummary = {
           totalDonations: 1247,
           totalAmount: 185420,
@@ -35,13 +45,8 @@ export const Dashboard: React.FC = () => {
             "Africa": { donations: 214, amount: 20420, beneficiaries: 822 }
           }
         };
-        
-        setTimeout(() => {
-          setImpactSummary(mockSummary);
-          setLoading(false);
-        }, 1000);
-      } catch (error) {
-        console.error('Error fetching impact summary:', error);
+        setImpactSummary(mockSummary);
+      } finally {
         setLoading(false);
       }
     };
@@ -66,6 +71,7 @@ export const Dashboard: React.FC = () => {
     return (
       <div className="dashboard-error">
         <p>Failed to load impact data. Please try again later.</p>
+        {error && <p className="error-details">{error}</p>}
       </div>
     );
   }
@@ -75,6 +81,7 @@ export const Dashboard: React.FC = () => {
       <div className="dashboard-header">
         <h1>Impact Dashboard</h1>
         <p>Track the real-world impact of your donations</p>
+        {error && <div className="warning-banner">{error}</div>}
       </div>
       
       <FilterBar onFilterChange={handleFilterChange} />

@@ -1,0 +1,39 @@
+{
+  "generatedAt": "2025-09-15T23:38:16.559Z",
+  "sourceDataset": "NCCS IRS 990 Efilers",
+  "recordCount": 10,
+  "totalDonations": 4017086474,
+  "totalCampaigns": 10,
+  "dateRange": {
+    "start": "2023-01-01",
+    "end": "2023-12-22"
+  },
+  "statistics": {
+    "averageDonation": null,
+    "averageCampaignGoal": 1872933464,
+    "completionRate": 0,
+    "topCategories": {
+      "Education": 5,
+      "Social Services": 3,
+      "General Support": 1,
+      "Healthcare": 1
+    },
+    "topStates": {
+      "DC": 2042497421,
+      "CA": 1397802085,
+      "NY": 336503089,
+      "GA": 168218902,
+      "TX": 52954500,
+      "WA": 8156394,
+      "IL": 7550262,
+      "OR": 2024413,
+      "FL": 1379408
+    },
+    "donorTypeDistribution": {
+      "foundation": 32,
+      "individual": 10,
+      "government": 16,
+      "corporate": 20
+    }
+  }
+}

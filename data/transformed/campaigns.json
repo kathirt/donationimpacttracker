@@ -1,0 +1,252 @@
+[
+  {
+    "id": "b1c5705896ce",
+    "name": "AMERICAN RED CROSS",
+    "description": "The American Red Cross prevents and alleviates human suffering in the face of emergencies by mobilizing the power of volunteers and the generosity of donors.",
+    "goal": 4342256390,
+    "raised": 3150000000,
+    "category": "General Support",
+    "location": {
+      "country": "United States",
+      "region": "DC",
+      "coordinates": [
+        -77.71391947520603,
+        38.92928801792777
+      ]
+    },
+    "startDate": "2023-01-01",
+    "endDate": "2023-12-31",
+    "status": "active",
+    "beneficiaries": 3205654,
+    "impactMetrics": {
+      "peopleHelped": 3205654,
+      "projectsCompleted": 120173,
+      "resourcesDistributed": 5354344
+    }
+  },
+  {
+    "id": "d5e69e789a0d",
+    "name": "DOCTORS WITHOUT BORDERS USA INC",
+    "description": "Doctors Without Borders provides medical humanitarian assistance to populations in distress, to victims of natural or man-made disasters, and to victims of armed conflict.",
+    "goal": 624717602,
+    "raised": 425000000,
+    "category": "Healthcare",
+    "location": {
+      "country": "United States",
+      "region": "NY",
+      "coordinates": [
+        -75.39624209943723,
+        41.476502227353485
+      ]
+    },
+    "startDate": "2023-01-01",
+    "endDate": "2023-12-31",
+    "status": "active",
+    "beneficiaries": 1762261,
+    "impactMetrics": {
+      "peopleHelped": 1762261,
+      "projectsCompleted": 25625,
+      "resourcesDistributed": 2041267
+    }
+  },
+  {
+    "id": "28f21e216ec3",
+    "name": "STANFORD UNIVERSITY",
+    "description": "Stanford University is dedicated to finding solutions to the great challenges of the day and to preparing our students for leadership in an increasingly complex world.",
+    "goal": 12180889806,
+    "raised": 8500000000,
+    "category": "Education",
+    "location": {
+      "country": "United States",
+      "region": "CA",
+      "coordinates": [
+        -120.22542621848336,
+        36.43643359277788
+      ]
+    },
+    "startDate": "2023-01-01",
+    "endDate": "2023-12-31",
+    "status": "active",
+    "beneficiaries": 7149645,
+    "impactMetrics": {
+      "peopleHelped": 7149645,
+      "projectsCompleted": 641246,
+      "resourcesDistributed": 50634912
+    }
+  },
+  {
+    "id": "2c506b9296c5",
+    "name": "HABITAT FOR HUMANITY INTERNATIONAL INC",
+    "description": "Habitat for Humanity International is a global nonprofit housing organization working in local communities across all 50 states in the U.S. and in approximately 70 countries.",
+    "goal": 358654678,
+    "raised": 285000000,
+    "category": "Social Services",
+    "location": {
+      "country": "United States",
+      "region": "GA",
+      "coordinates": [
+        -83.25246975509634,
+        32.2687211193397
+      ]
+    },
+    "startDate": "2023-01-01",
+    "endDate": "2023-12-31",
+    "status": "active",
+    "beneficiaries": 1010115,
+    "impactMetrics": {
+      "peopleHelped": 1010115,
+      "projectsCompleted": 23642,
+      "resourcesDistributed": 953289
+    }
+  },
+  {
+    "id": "336e0f4b94a0",
+    "name": "UNITED WAY WORLDWIDE",
+    "description": "United Way fights for the health, education, and financial stability of every person in every community.",
+    "goal": 240497672,
+    "raised": 195000000,
+    "category": "Education",
+    "location": {
+      "country": "United States",
+      "region": "DC",
+      "coordinates": [
+        -76.70864267523407,
+        38.54456968767863
+      ]
+    },
+    "startDate": "2023-01-01",
+    "endDate": "2023-12-31",
+    "status": "active",
+    "beneficiaries": 450559,
+    "impactMetrics": {
+      "peopleHelped": 450559,
+      "projectsCompleted": 13371,
+      "resourcesDistributed": 471035
+    }
+  },
+  {
+    "id": "1409f530c504",
+    "name": "LOCAL COMMUNITY FOOD BANK",
+    "description": "To alleviate hunger in our community by providing food assistance and advocating for systemic change.",
+    "goal": 12083792,
+    "raised": 8500000,
+    "category": "Social Services",
+    "location": {
+      "country": "United States",
+      "region": "WA",
+      "coordinates": [
+        -121.31655083928311,
+        47.56368581789586
+      ]
+    },
+    "startDate": "2023-01-01",
+    "endDate": "2023-12-31",
+    "status": "active",
+    "beneficiaries": 17460,
+    "impactMetrics": {
+      "peopleHelped": 17460,
+      "projectsCompleted": 501,
+      "resourcesDistributed": 25947
+    }
+  },
+  {
+    "id": "13b5e51ab66b",
+    "name": "CITY ARTS MUSEUM",
+    "description": "To inspire and educate through art, fostering creativity and cultural understanding in our diverse community.",
+    "goal": 17098535,
+    "raised": 12000000,
+    "category": "Social Services",
+    "location": {
+      "country": "United States",
+      "region": "IL",
+      "coordinates": [
+        -88.1923218528503,
+        39.92717857658078
+      ]
+    },
+    "startDate": "2023-01-01",
+    "endDate": "2023-12-31",
+    "status": "active",
+    "beneficiaries": 16011,
+    "impactMetrics": {
+      "peopleHelped": 16011,
+      "projectsCompleted": 1055,
+      "resourcesDistributed": 88509
+    }
+  },
+  {
+    "id": "7c5d49b9387a",
+    "name": "TEXAS CHILDREN'S HOSPITAL",
+    "description": "To create a healthier world for children and women by leading in patient care, education and research.",
+    "goal": 946634965,
+    "raised": 750000000,
+    "category": "Education",
+    "location": {
+      "country": "United States",
+      "region": "TX",
+      "coordinates": [
+        -97.40135524420042,
+        30.272544733612516
+      ]
+    },
+    "startDate": "2023-01-01",
+    "endDate": "2023-12-31",
+    "status": "active",
+    "beneficiaries": 1678662,
+    "impactMetrics": {
+      "peopleHelped": 1678662,
+      "projectsCompleted": 49992,
+      "resourcesDistributed": 1311347
+    }
+  },
+  {
+    "id": "63bb0f666b7a",
+    "name": "ENVIRONMENTAL CONSERVATION ALLIANCE",
+    "description": "Dedicated to protecting and restoring natural ecosystems through conservation, education, and sustainable practices.",
+    "goal": 4356020,
+    "raised": 3200000,
+    "category": "Education",
+    "location": {
+      "country": "United States",
+      "region": "OR",
+      "coordinates": [
+        -119.79990751851851,
+        43.7202219553786
+      ]
+    },
+    "startDate": "2023-01-01",
+    "endDate": "2023-12-31",
+    "status": "active",
+    "beneficiaries": 6142,
+    "impactMetrics": {
+      "peopleHelped": 6142,
+      "projectsCompleted": 218,
+      "resourcesDistributed": 16210
+    }
+  },
+  {
+    "id": "da6bc2670898",
+    "name": "YOUTH MENTORSHIP PROGRAM",
+    "description": "Empowering at-risk youth through mentorship, education, and life skills development to build brighter futures.",
+    "goal": 2145180,
+    "raised": 1450000,
+    "category": "Education",
+    "location": {
+      "country": "United States",
+      "region": "FL",
+      "coordinates": [
+        -81.08595826642063,
+        27.021178824966288
+      ]
+    },
+    "startDate": "2023-01-01",
+    "endDate": "2023-12-31",
+    "status": "active",
+    "beneficiaries": 3045,
+    "impactMetrics": {
+      "peopleHelped": 3045,
+      "projectsCompleted": 69,
+      "resourcesDistributed": 4775
+    }
+  }
+]

@@ -144,6 +144,11 @@ simple-test/
 test-deploy.html
 DEPLOYMENT_COMPLETE.md
 
+# NCCS data files (large datasets)
+data/nccs-test/*.csv
+data/nccs/nccs-combined-data.json
+scripts/node_modules/
+
 # Files that may contain secrets
 *_COMPLETE.md
 *.secrets

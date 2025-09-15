@@ -1,0 +1,24 @@
+{
+  "name": "data-testing-scripts",
+  "version": "1.0.0",
+  "description": "Data testing utilities for Donation Impact Tracker",
+  "scripts": {
+    "generate-data": "node generate-test-data.js",
+    "test-api": "node test-api-endpoints.js",
+    "validate-data": "node validate-data.js",
+    "fetch-nccs": "npx tsx nccs-data-fetcher.ts",
+    "transform-nccs": "npx tsx nccs-data-transformer.ts",
+    "nccs-pipeline": "npm run fetch-nccs && npm run transform-nccs",
+    "build-nccs": "tsc nccs-data-fetcher.ts --outDir ./dist --target es2020 --module commonjs --esModuleInterop"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^8.3.1",
+    "axios": "^1.6.0",
+    "csv-parser": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.0.0"
+  }
+}

@@ -1,0 +1,110 @@
+[
+  {
+    "id": "d7b377e4acae",
+    "name": "DC",
+    "coordinates": [
+      -77.71391947520603,
+      38.92928801792777
+    ],
+    "totalDonations": 2042497421,
+    "activeCampaigns": 2,
+    "beneficiaries": 3656213,
+    "impactScore": 100
+  },
+  {
+    "id": "bbc722bcb6e0",
+    "name": "CA",
+    "coordinates": [
+      -120.22542621848336,
+      36.43643359277788
+    ],
+    "totalDonations": 1397802085,
+    "activeCampaigns": 1,
+    "beneficiaries": 7149645,
+    "impactScore": 100
+  },
+  {
+    "id": "82f0f3629d1f",
+    "name": "NY",
+    "coordinates": [
+      -75.39624209943723,
+      41.476502227353485
+    ],
+    "totalDonations": 336503089,
+    "activeCampaigns": 1,
+    "beneficiaries": 1762261,
+    "impactScore": 100
+  },
+  {
+    "id": "3313014aabe3",
+    "name": "GA",
+    "coordinates": [
+      -83.25246975509634,
+      32.2687211193397
+    ],
+    "totalDonations": 168218902,
+    "activeCampaigns": 1,
+    "beneficiaries": 1010115,
+    "impactScore": 100
+  },
+  {
+    "id": "d85af500bd75",
+    "name": "TX",
+    "coordinates": [
+      -97.40135524420042,
+      30.272544733612516
+    ],
+    "totalDonations": 52954500,
+    "activeCampaigns": 1,
+    "beneficiaries": 1678662,
+    "impactScore": 100
+  },
+  {
+    "id": "cb8082f2270f",
+    "name": "WA",
+    "coordinates": [
+      -121.31655083928311,
+      47.56368581789586
+    ],
+    "totalDonations": 8156394,
+    "activeCampaigns": 1,
+    "beneficiaries": 17460,
+    "impactScore": 100
+  },
+  {
+    "id": "dc65dae64441",
+    "name": "IL",
+    "coordinates": [
+      -88.1923218528503,
+      39.92717857658078
+    ],
+    "totalDonations": 7550262,
+    "activeCampaigns": 1,
+    "beneficiaries": 16011,
+    "impactScore": 100
+  },
+  {
+    "id": "b2963a5311ae",
+    "name": "OR",
+    "coordinates": [
+      -119.79990751851851,
+      43.7202219553786
+    ],
+    "totalDonations": 2024413,
+    "activeCampaigns": 1,
+    "beneficiaries": 6142,
+    "impactScore": 100
+  },
+  {
+    "id": "500679a4daae",
+    "name": "FL",
+    "coordinates": [
+      -81.08595826642063,
+      27.021178824966288
+    ],
+    "totalDonations": 1379408,
+    "activeCampaigns": 1,
+    "beneficiaries": 3045,
+    "impactScore": 100
+  }
+]

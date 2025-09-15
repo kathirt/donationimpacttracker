@@ -1,0 +1,1406 @@
+[
+  {
+    "id": "565d6719b646",
+    "donorName": "Charitable Trust",
+    "amount": 2190497,
+    "date": "2023-01-01",
+    "campaign": "336e0f4b94a0",
+    "location": {
+      "country": "United States",
+      "region": "DC",
+      "coordinates": [
+        -76.71456880976952,
+        38.937765906184474
+      ]
+    },
+    "type": "foundation",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "8880383efad0",
+    "donorName": "Community Foundation",
+    "amount": 4447288,
+    "date": "2023-01-02",
+    "campaign": "336e0f4b94a0",
+    "location": {
+      "country": "United States",
+      "region": "DC",
+      "coordinates": [
+        -77.07566331195095,
+        38.88190125857912
+      ]
+    },
+    "type": "individual",
+    "recurring": true,
+    "anonymous": false
+  },
+  {
+    "id": "e4761814fa97",
+    "donorName": "Major Donor",
+    "amount": 1879868,
+    "date": "2023-01-02",
+    "campaign": "13b5e51ab66b",
+    "location": {
+      "country": "United States",
+      "region": "IL",
+      "coordinates": [
+        -89.24597472231387,
+        39.744494665357905
+      ]
+    },
+    "type": "foundation",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "2aefcd59dc49",
+    "donorName": "Major Donor",
+    "amount": 60201639,
+    "date": "2023-01-11",
+    "campaign": "28f21e216ec3",
+    "location": {
+      "country": "United States",
+      "region": "CA",
+      "coordinates": [
+        -119.06253868375796,
+        36.4317625829002
+      ]
+    },
+    "type": "government",
+    "recurring": true,
+    "anonymous": false
+  },
+  {
+    "id": "17eac8fa8f5a",
+    "donorName": "Grant Foundation",
+    "amount": 9439841,
+    "date": "2023-01-13",
+    "campaign": "d5e69e789a0d",
+    "location": {
+      "country": "United States",
+      "region": "NY",
+      "coordinates": [
+        -75.27060736913529,
+        42.073884483388426
+      ]
+    },
+    "type": "government",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "94fd0987c9fe",
+    "donorName": "Online Campaign",
+    "amount": 2385336,
+    "date": "2023-01-14",
+    "campaign": "1409f530c504",
+    "location": {
+      "country": "United States",
+      "region": "WA",
+      "coordinates": [
+        -121.92082659745844,
+        47.304821504659834
+      ]
+    },
+    "type": "corporate",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "6119ef1af62e",
+    "donorName": "Family Foundation",
+    "amount": 256629,
+    "date": "2023-01-23",
+    "campaign": "da6bc2670898",
+    "location": {
+      "country": "United States",
+      "region": "FL",
+      "coordinates": [
+        -82.67706539771802,
+        27.391130714179937
+      ]
+    },
+    "type": "foundation",
+    "recurring": false,
+    "anonymous": true
+  },
+  {
+    "id": "9620f50c12bb",
+    "donorName": "Individual Supporter",
+    "amount": 226864,
+    "date": "2023-02-08",
+    "campaign": "da6bc2670898",
+    "location": {
+      "country": "United States",
+      "region": "FL",
+      "coordinates": [
+        -82.17181892462968,
+        28.09656373021519
+      ]
+    },
+    "type": "corporate",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "b7f9820e9fef",
+    "donorName": "Grant Foundation",
+    "amount": 1459692,
+    "date": "2023-02-20",
+    "campaign": "1409f530c504",
+    "location": {
+      "country": "United States",
+      "region": "WA",
+      "coordinates": [
+        -121.17132793861668,
+        47.61175571671809
+      ]
+    },
+    "type": "foundation",
+    "recurring": true,
+    "anonymous": true
+  },
+  {
+    "id": "d2610629b552",
+    "donorName": "Anonymous Donor",
+    "amount": 1395867,
+    "date": "2023-02-26",
+    "campaign": "13b5e51ab66b",
+    "location": {
+      "country": "United States",
+      "region": "IL",
+      "coordinates": [
+        -88.33365545053172,
+        39.816522402934865
+      ]
+    },
+    "type": "government",
+    "recurring": true,
+    "anonymous": false
+  },
+  {
+    "id": "bf2bd3866e57",
+    "donorName": "Event Fundraiser",
+    "amount": 16324154,
+    "date": "2023-03-01",
+    "campaign": "336e0f4b94a0",
+    "location": {
+      "country": "United States",
+      "region": "DC",
+      "coordinates": [
+        -77.61082285038648,
+        38.91288017055748
+      ]
+    },
+    "type": "foundation",
+    "recurring": false,
+    "anonymous": true
+  },
+  {
+    "id": "2c76204eba01",
+    "donorName": "Major Donor",
+    "amount": 3399527,
+    "date": "2023-03-08",
+    "campaign": "2c506b9296c5",
+    "location": {
+      "country": "United States",
+      "region": "GA",
+      "coordinates": [
+        -83.98357259569826,
+        33.13676860544285
+      ]
+    },
+    "type": "foundation",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "19ccceeae3f7",
+    "donorName": "Community Foundation",
+    "amount": 41382622,
+    "date": "2023-03-09",
+    "campaign": "336e0f4b94a0",
+    "location": {
+      "country": "United States",
+      "region": "DC",
+      "coordinates": [
+        -76.21547874793328,
+        38.60349888607161
+      ]
+    },
+    "type": "corporate",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "95e6dc871f69",
+    "donorName": "Corporate Partnership",
+    "amount": 9789434,
+    "date": "2023-03-17",
+    "campaign": "7c5d49b9387a",
+    "location": {
+      "country": "United States",
+      "region": "TX",
+      "coordinates": [
+        -98.53054312546408,
+        31.00577206941165
+      ]
+    },
+    "type": "government",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "49e6e2cf29b2",
+    "donorName": "Grant Foundation",
+    "amount": 40592,
+    "date": "2023-03-21",
+    "campaign": "63bb0f666b7a",
+    "location": {
+      "country": "United States",
+      "region": "OR",
+      "coordinates": [
+        -119.8135906510656,
+        44.557448596131564
+      ]
+    },
+    "type": "foundation",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "894a93556e7c",
+    "donorName": "Local Business Alliance",
+    "amount": 115790691,
+    "date": "2023-03-22",
+    "campaign": "d5e69e789a0d",
+    "location": {
+      "country": "United States",
+      "region": "NY",
+      "coordinates": [
+        -74.90412684691633,
+        42.655438498500246
+      ]
+    },
+    "type": "foundation",
+    "recurring": true,
+    "anonymous": false
+  },
+  {
+    "id": "95cc6e115977",
+    "donorName": "Grant Foundation",
+    "amount": 1249726493,
+    "date": "2023-03-23",
+    "campaign": "b1c5705896ce",
+    "location": {
+      "country": "United States",
+      "region": "DC",
+      "coordinates": [
+        -76.42076626305476,
+        39.17090955365885
+      ]
+    },
+    "type": "corporate",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "731e11e81fe6",
+    "donorName": "Monthly Supporter",
+    "amount": 16634136,
+    "date": "2023-03-26",
+    "campaign": "336e0f4b94a0",
+    "location": {
+      "country": "United States",
+      "region": "DC",
+      "coordinates": [
+        -76.42183947195443,
+        38.70902855453239
+      ]
+    },
+    "type": "individual",
+    "recurring": true,
+    "anonymous": false
+  },
+  {
+    "id": "9695ddaec76a",
+    "donorName": "Community Foundation",
+    "amount": 38532715,
+    "date": "2023-03-28",
+    "campaign": "d5e69e789a0d",
+    "location": {
+      "country": "United States",
+      "region": "NY",
+      "coordinates": [
+        -74.74913615442792,
+        42.24169268398501
+      ]
+    },
+    "type": "foundation",
+    "recurring": true,
+    "anonymous": false
+  },
+  {
+    "id": "251f712536f5",
+    "donorName": "Corporate Partnership",
+    "amount": 22490004,
+    "date": "2023-03-30",
+    "campaign": "7c5d49b9387a",
+    "location": {
+      "country": "United States",
+      "region": "TX",
+      "coordinates": [
+        -97.24013463619171,
+        30.6235342420794
+      ]
+    },
+    "type": "foundation",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "6634bed1c10b",
+    "donorName": "Charitable Trust",
+    "amount": 216999,
+    "date": "2023-03-30",
+    "campaign": "63bb0f666b7a",
+    "location": {
+      "country": "United States",
+      "region": "OR",
+      "coordinates": [
+        -120.3068232343979,
+        45.31554533133877
+      ]
+    },
+    "type": "corporate",
+    "recurring": true,
+    "anonymous": false
+  },
+  {
+    "id": "67f5cbf0222c",
+    "donorName": "Event Fundraiser",
+    "amount": 323584,
+    "date": "2023-03-31",
+    "campaign": "da6bc2670898",
+    "location": {
+      "country": "United States",
+      "region": "FL",
+      "coordinates": [
+        -81.36443777325051,
+        26.948462979933762
+      ]
+    },
+    "type": "corporate",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "511b910d07dd",
+    "donorName": "Online Campaign",
+    "amount": 18097746,
+    "date": "2023-04-07",
+    "campaign": "d5e69e789a0d",
+    "location": {
+      "country": "United States",
+      "region": "NY",
+      "coordinates": [
+        -74.78373704745943,
+        43.07902414313903
+      ]
+    },
+    "type": "corporate",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "068cb9c12105",
+    "donorName": "Community Foundation",
+    "amount": 30275,
+    "date": "2023-04-15",
+    "campaign": "da6bc2670898",
+    "location": {
+      "country": "United States",
+      "region": "FL",
+      "coordinates": [
+        -82.09443673430728,
+        27.884251583393826
+      ]
+    },
+    "type": "corporate",
+    "recurring": true,
+    "anonymous": false
+  },
+  {
+    "id": "90ba88823ce4",
+    "donorName": "Family Foundation",
+    "amount": 326086,
+    "date": "2023-04-20",
+    "campaign": "da6bc2670898",
+    "location": {
+      "country": "United States",
+      "region": "FL",
+      "coordinates": [
+        -80.92084519726097,
+        28.309129211045352
+      ]
+    },
+    "type": "individual",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "ea16376b56da",
+    "donorName": "Event Fundraiser",
+    "amount": 445882,
+    "date": "2023-04-23",
+    "campaign": "13b5e51ab66b",
+    "location": {
+      "country": "United States",
+      "region": "IL",
+      "coordinates": [
+        -89.76313483043243,
+        40.632112254079
+      ]
+    },
+    "type": "corporate",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "3c15dfe3f10f",
+    "donorName": "Major Donor",
+    "amount": 3221750,
+    "date": "2023-04-23",
+    "campaign": "7c5d49b9387a",
+    "location": {
+      "country": "United States",
+      "region": "TX",
+      "coordinates": [
+        -97.33290988985917,
+        30.650091475139735
+      ]
+    },
+    "type": "government",
+    "recurring": true,
+    "anonymous": false
+  },
+  {
+    "id": "a8adc92d03f5",
+    "donorName": "Major Donor",
+    "amount": 78461450,
+    "date": "2023-04-28",
+    "campaign": "d5e69e789a0d",
+    "location": {
+      "country": "United States",
+      "region": "NY",
+      "coordinates": [
+        -75.00285167242421,
+        42.48970072855044
+      ]
+    },
+    "type": "government",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "8668397a1875",
+    "donorName": "Local Business Alliance",
+    "amount": 2062948,
+    "date": "2023-05-03",
+    "campaign": "13b5e51ab66b",
+    "location": {
+      "country": "United States",
+      "region": "IL",
+      "coordinates": [
+        -89.55788335413375,
+        39.575665948978404
+      ]
+    },
+    "type": "foundation",
+    "recurring": true,
+    "anonymous": false
+  },
+  {
+    "id": "56e13c5ffdea",
+    "donorName": "Corporate Partnership",
+    "amount": 53494192,
+    "date": "2023-05-06",
+    "campaign": "28f21e216ec3",
+    "location": {
+      "country": "United States",
+      "region": "CA",
+      "coordinates": [
+        -118.81870598555304,
+        35.66425118796378
+      ]
+    },
+    "type": "foundation",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "2bd262e8b19a",
+    "donorName": "Event Fundraiser",
+    "amount": 73869,
+    "date": "2023-05-17",
+    "campaign": "13b5e51ab66b",
+    "location": {
+      "country": "United States",
+      "region": "IL",
+      "coordinates": [
+        -89.04733135938213,
+        40.04606363970428
+      ]
+    },
+    "type": "individual",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "b1fe8f4eefdc",
+    "donorName": "Online Campaign",
+    "amount": 13342282,
+    "date": "2023-05-28",
+    "campaign": "2c506b9296c5",
+    "location": {
+      "country": "United States",
+      "region": "GA",
+      "coordinates": [
+        -83.72336016440782,
+        31.512037268081368
+      ]
+    },
+    "type": "government",
+    "recurring": true,
+    "anonymous": false
+  },
+  {
+    "id": "748969df2add",
+    "donorName": "Charitable Trust",
+    "amount": 18672848,
+    "date": "2023-05-28",
+    "campaign": "2c506b9296c5",
+    "location": {
+      "country": "United States",
+      "region": "GA",
+      "coordinates": [
+        -84.03691385994802,
+        32.96756197723353
+      ]
+    },
+    "type": "foundation",
+    "recurring": true,
+    "anonymous": false
+  },
+  {
+    "id": "0be5e7394574",
+    "donorName": "Online Campaign",
+    "amount": 20233589,
+    "date": "2023-06-02",
+    "campaign": "2c506b9296c5",
+    "location": {
+      "country": "United States",
+      "region": "GA",
+      "coordinates": [
+        -83.63971081309465,
+        33.078618041540615
+      ]
+    },
+    "type": "foundation",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "56cb87df67f5",
+    "donorName": "Major Donor",
+    "amount": 104089,
+    "date": "2023-06-04",
+    "campaign": "da6bc2670898",
+    "location": {
+      "country": "United States",
+      "region": "FL",
+      "coordinates": [
+        -82.58656125178885,
+        27.061546040024155
+      ]
+    },
+    "type": "individual",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "4bf915803bd7",
+    "donorName": "Charitable Trust",
+    "amount": 18023850,
+    "date": "2023-06-06",
+    "campaign": "d5e69e789a0d",
+    "location": {
+      "country": "United States",
+      "region": "NY",
+      "coordinates": [
+        -75.74332250675053,
+        42.159168214442055
+      ]
+    },
+    "type": "government",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "e7d162879b06",
+    "donorName": "Community Foundation",
+    "amount": 22663560,
+    "date": "2023-06-08",
+    "campaign": "2c506b9296c5",
+    "location": {
+      "country": "United States",
+      "region": "GA",
+      "coordinates": [
+        -83.84294129189958,
+        31.480119555878044
+      ]
+    },
+    "type": "corporate",
+    "recurring": true,
+    "anonymous": false
+  },
+  {
+    "id": "9f5d83fa113f",
+    "donorName": "Corporate Partnership",
+    "amount": 15455627,
+    "date": "2023-06-09",
+    "campaign": "7c5d49b9387a",
+    "location": {
+      "country": "United States",
+      "region": "TX",
+      "coordinates": [
+        -97.51762454804683,
+        32.01177421551975
+      ]
+    },
+    "type": "foundation",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "d5eb20018aba",
+    "donorName": "Individual Supporter",
+    "amount": 22950342,
+    "date": "2023-06-12",
+    "campaign": "2c506b9296c5",
+    "location": {
+      "country": "United States",
+      "region": "GA",
+      "coordinates": [
+        -83.6393838604106,
+        31.203600691843242
+      ]
+    },
+    "type": "corporate",
+    "recurring": false,
+    "anonymous": true
+  },
+  {
+    "id": "6324c558be9c",
+    "donorName": "Event Fundraiser",
+    "amount": 24491,
+    "date": "2023-06-22",
+    "campaign": "63bb0f666b7a",
+    "location": {
+      "country": "United States",
+      "region": "OR",
+      "coordinates": [
+        -121.01596943475325,
+        45.329639046925244
+      ]
+    },
+    "type": "individual",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "ec7a14a9753c",
+    "donorName": "Major Donor",
+    "amount": 8604303,
+    "date": "2023-06-26",
+    "campaign": "336e0f4b94a0",
+    "location": {
+      "country": "United States",
+      "region": "DC",
+      "coordinates": [
+        -77.15978640900157,
+        38.13003531938196
+      ]
+    },
+    "type": "government",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "7db124960617",
+    "donorName": "Community Foundation",
+    "amount": 463379,
+    "date": "2023-06-29",
+    "campaign": "13b5e51ab66b",
+    "location": {
+      "country": "United States",
+      "region": "IL",
+      "coordinates": [
+        -88.83811089742608,
+        40.870682360636806
+      ]
+    },
+    "type": "government",
+    "recurring": false,
+    "anonymous": true
+  },
+  {
+    "id": "05539983cf02",
+    "donorName": "Monthly Supporter",
+    "amount": 93476,
+    "date": "2023-07-04",
+    "campaign": "13b5e51ab66b",
+    "location": {
+      "country": "United States",
+      "region": "IL",
+      "coordinates": [
+        -88.4623882190584,
+        39.7030977029253
+      ]
+    },
+    "type": "foundation",
+    "recurring": true,
+    "anonymous": true
+  },
+  {
+    "id": "3a5e38f1b0b5",
+    "donorName": "Event Fundraiser",
+    "amount": 212467,
+    "date": "2023-07-05",
+    "campaign": "63bb0f666b7a",
+    "location": {
+      "country": "United States",
+      "region": "OR",
+      "coordinates": [
+        -120.98903777418883,
+        44.32095473916581
+      ]
+    },
+    "type": "individual",
+    "recurring": true,
+    "anonymous": false
+  },
+  {
+    "id": "93a2d15fa1c6",
+    "donorName": "Corporate Partnership",
+    "amount": 1997685,
+    "date": "2023-07-06",
+    "campaign": "7c5d49b9387a",
+    "location": {
+      "country": "United States",
+      "region": "TX",
+      "coordinates": [
+        -97.27871639541475,
+        30.498931103181324
+      ]
+    },
+    "type": "individual",
+    "recurring": true,
+    "anonymous": true
+  },
+  {
+    "id": "d196bff18d14",
+    "donorName": "Grant Foundation",
+    "amount": 5438460,
+    "date": "2023-07-09",
+    "campaign": "2c506b9296c5",
+    "location": {
+      "country": "United States",
+      "region": "GA",
+      "coordinates": [
+        -83.98488300579184,
+        32.785188333795396
+      ]
+    },
+    "type": "government",
+    "recurring": true,
+    "anonymous": true
+  },
+  {
+    "id": "6a7778b2cd68",
+    "donorName": "Event Fundraiser",
+    "amount": 5870997,
+    "date": "2023-07-11",
+    "campaign": "2c506b9296c5",
+    "location": {
+      "country": "United States",
+      "region": "GA",
+      "coordinates": [
+        -82.98904348422319,
+        31.234895799833783
+      ]
+    },
+    "type": "corporate",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "587574d3c6a7",
+    "donorName": "Major Donor",
+    "amount": 65704,
+    "date": "2023-07-19",
+    "campaign": "da6bc2670898",
+    "location": {
+      "country": "United States",
+      "region": "FL",
+      "coordinates": [
+        -81.65113374036358,
+        27.32657096433752
+      ]
+    },
+    "type": "corporate",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "7ef7a0bbd840",
+    "donorName": "Major Donor",
+    "amount": 201288,
+    "date": "2023-07-21",
+    "campaign": "1409f530c504",
+    "location": {
+      "country": "United States",
+      "region": "WA",
+      "coordinates": [
+        -120.3560079788051,
+        47.221460206744666
+      ]
+    },
+    "type": "foundation",
+    "recurring": false,
+    "anonymous": true
+  },
+  {
+    "id": "047c2347efd1",
+    "donorName": "Monthly Supporter",
+    "amount": 736298,
+    "date": "2023-07-22",
+    "campaign": "13b5e51ab66b",
+    "location": {
+      "country": "United States",
+      "region": "IL",
+      "coordinates": [
+        -88.82942560495775,
+        40.3879000984338
+      ]
+    },
+    "type": "foundation",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "dd5592d7e51c",
+    "donorName": "Family Foundation",
+    "amount": 552498677,
+    "date": "2023-07-30",
+    "campaign": "28f21e216ec3",
+    "location": {
+      "country": "United States",
+      "region": "CA",
+      "coordinates": [
+        -120.64568004579667,
+        36.106613798915056
+      ]
+    },
+    "type": "corporate",
+    "recurring": false,
+    "anonymous": true
+  },
+  {
+    "id": "6a8fd554caa2",
+    "donorName": "Grant Foundation",
+    "amount": 194542,
+    "date": "2023-07-30",
+    "campaign": "63bb0f666b7a",
+    "location": {
+      "country": "United States",
+      "region": "OR",
+      "coordinates": [
+        -121.46788928452163,
+        44.08248028736038
+      ]
+    },
+    "type": "foundation",
+    "recurring": true,
+    "anonymous": true
+  },
+  {
+    "id": "77220a68f402",
+    "donorName": "Individual Supporter",
+    "amount": 6484002,
+    "date": "2023-08-04",
+    "campaign": "336e0f4b94a0",
+    "location": {
+      "country": "United States",
+      "region": "DC",
+      "coordinates": [
+        -76.50789119700079,
+        39.14089805991819
+      ]
+    },
+    "type": "foundation",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "af756679e9cf",
+    "donorName": "Online Campaign",
+    "amount": 240443,
+    "date": "2023-08-06",
+    "campaign": "63bb0f666b7a",
+    "location": {
+      "country": "United States",
+      "region": "OR",
+      "coordinates": [
+        -120.63531432889727,
+        45.323261648033224
+      ]
+    },
+    "type": "government",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "5e32a4d1d3a3",
+    "donorName": "Grant Foundation",
+    "amount": 217789786,
+    "date": "2023-08-07",
+    "campaign": "b1c5705896ce",
+    "location": {
+      "country": "United States",
+      "region": "DC",
+      "coordinates": [
+        -76.58692644421313,
+        38.333336529863
+      ]
+    },
+    "type": "foundation",
+    "recurring": false,
+    "anonymous": true
+  },
+  {
+    "id": "22882c800c77",
+    "donorName": "Local Business Alliance",
+    "amount": 215964,
+    "date": "2023-08-14",
+    "campaign": "13b5e51ab66b",
+    "location": {
+      "country": "United States",
+      "region": "IL",
+      "coordinates": [
+        -88.53873368903687,
+        40.64705616571296
+      ]
+    },
+    "type": "individual",
+    "recurring": false,
+    "anonymous": true
+  },
+  {
+    "id": "1174289720ae",
+    "donorName": "Corporate Partnership",
+    "amount": 263479,
+    "date": "2023-08-14",
+    "campaign": "63bb0f666b7a",
+    "location": {
+      "country": "United States",
+      "region": "OR",
+      "coordinates": [
+        -120.21712894456792,
+        45.10541658367265
+      ]
+    },
+    "type": "foundation",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "af9ed5f3d8a1",
+    "donorName": "Individual Supporter",
+    "amount": 19126,
+    "date": "2023-09-06",
+    "campaign": "da6bc2670898",
+    "location": {
+      "country": "United States",
+      "region": "FL",
+      "coordinates": [
+        -82.32340587466874,
+        28.625343325141877
+      ]
+    },
+    "type": "corporate",
+    "recurring": true,
+    "anonymous": false
+  },
+  {
+    "id": "dbfdfc98bb6d",
+    "donorName": "Family Foundation",
+    "amount": 695388615,
+    "date": "2023-09-17",
+    "campaign": "28f21e216ec3",
+    "location": {
+      "country": "United States",
+      "region": "CA",
+      "coordinates": [
+        -120.18703649972593,
+        35.55886627892823
+      ]
+    },
+    "type": "foundation",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "034f5c0c6350",
+    "donorName": "Local Business Alliance",
+    "amount": 106868,
+    "date": "2023-09-24",
+    "campaign": "13b5e51ab66b",
+    "location": {
+      "country": "United States",
+      "region": "IL",
+      "coordinates": [
+        -89.79896979685539,
+        40.88327350973796
+      ]
+    },
+    "type": "foundation",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "182f19ed8de4",
+    "donorName": "Major Donor",
+    "amount": 2161900,
+    "date": "2023-09-27",
+    "campaign": "1409f530c504",
+    "location": {
+      "country": "United States",
+      "region": "WA",
+      "coordinates": [
+        -122.09134332266322,
+        47.96888811955227
+      ]
+    },
+    "type": "corporate",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "150ab782f9c9",
+    "donorName": "Major Donor",
+    "amount": 33100165,
+    "date": "2023-10-04",
+    "campaign": "2c506b9296c5",
+    "location": {
+      "country": "United States",
+      "region": "GA",
+      "coordinates": [
+        -83.95913490088809,
+        31.452059516434257
+      ]
+    },
+    "type": "government",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "2b936fd852a1",
+    "donorName": "Major Donor",
+    "amount": 54191546,
+    "date": "2023-10-10",
+    "campaign": "336e0f4b94a0",
+    "location": {
+      "country": "United States",
+      "region": "DC",
+      "coordinates": [
+        -77.41823684486444,
+        38.42052688871928
+      ]
+    },
+    "type": "corporate",
+    "recurring": true,
+    "anonymous": false
+  },
+  {
+    "id": "e9d7eced9dd4",
+    "donorName": "Community Foundation",
+    "amount": 1951984,
+    "date": "2023-10-20",
+    "campaign": "2c506b9296c5",
+    "location": {
+      "country": "United States",
+      "region": "GA",
+      "coordinates": [
+        -82.71103543448062,
+        31.591315550558893
+      ]
+    },
+    "type": "foundation",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "228b07fc4e5c",
+    "donorName": "Charitable Trust",
+    "amount": 12949623,
+    "date": "2023-10-23",
+    "campaign": "d5e69e789a0d",
+    "location": {
+      "country": "United States",
+      "region": "NY",
+      "coordinates": [
+        -74.51416238553635,
+        42.390361150422436
+      ]
+    },
+    "type": "foundation",
+    "recurring": false,
+    "anonymous": true
+  },
+  {
+    "id": "658d975e3717",
+    "donorName": "Anonymous Donor",
+    "amount": 16756366,
+    "date": "2023-10-29",
+    "campaign": "d5e69e789a0d",
+    "location": {
+      "country": "United States",
+      "region": "NY",
+      "coordinates": [
+        -74.47188203168567,
+        41.19611367606092
+      ]
+    },
+    "type": "corporate",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "bbb7801af9bc",
+    "donorName": "Anonymous Donor",
+    "amount": 7759727,
+    "date": "2023-11-01",
+    "campaign": "2c506b9296c5",
+    "location": {
+      "country": "United States",
+      "region": "GA",
+      "coordinates": [
+        -84.14966141845005,
+        32.52265143609134
+      ]
+    },
+    "type": "foundation",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "bfa104a7b0fb",
+    "donorName": "Anonymous Donor",
+    "amount": 36218962,
+    "date": "2023-11-05",
+    "campaign": "28f21e216ec3",
+    "location": {
+      "country": "United States",
+      "region": "CA",
+      "coordinates": [
+        -119.15575266272302,
+        35.50671790810096
+      ]
+    },
+    "type": "government",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "738cafd760be",
+    "donorName": "Individual Supporter",
+    "amount": 28450807,
+    "date": "2023-11-14",
+    "campaign": "d5e69e789a0d",
+    "location": {
+      "country": "United States",
+      "region": "NY",
+      "coordinates": [
+        -75.91875427188073,
+        41.87926544180214
+      ]
+    },
+    "type": "foundation",
+    "recurring": true,
+    "anonymous": false
+  },
+  {
+    "id": "1d138b72257c",
+    "donorName": "Monthly Supporter",
+    "amount": 178310,
+    "date": "2023-11-14",
+    "campaign": "63bb0f666b7a",
+    "location": {
+      "country": "United States",
+      "region": "OR",
+      "coordinates": [
+        -119.927416779945,
+        45.126439312492835
+      ]
+    },
+    "type": "government",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "4ea8f59d48db",
+    "donorName": "Corporate Partnership",
+    "amount": 424722594,
+    "date": "2023-11-19",
+    "campaign": "b1c5705896ce",
+    "location": {
+      "country": "United States",
+      "region": "DC",
+      "coordinates": [
+        -77.72481377068556,
+        39.41010470204274
+      ]
+    },
+    "type": "foundation",
+    "recurring": true,
+    "anonymous": false
+  },
+  {
+    "id": "740ccb1661f1",
+    "donorName": "Charitable Trust",
+    "amount": 1948178,
+    "date": "2023-11-23",
+    "campaign": "1409f530c504",
+    "location": {
+      "country": "United States",
+      "region": "WA",
+      "coordinates": [
+        -121.82940603805623,
+        47.90532110216321
+      ]
+    },
+    "type": "foundation",
+    "recurring": true,
+    "anonymous": false
+  },
+  {
+    "id": "4d3ab65e9942",
+    "donorName": "Community Foundation",
+    "amount": 36855,
+    "date": "2023-11-28",
+    "campaign": "63bb0f666b7a",
+    "location": {
+      "country": "United States",
+      "region": "OR",
+      "coordinates": [
+        -120.01757033164722,
+        44.1650968800679
+      ]
+    },
+    "type": "corporate",
+    "recurring": true,
+    "anonymous": false
+  },
+  {
+    "id": "e97ddbb814aa",
+    "donorName": "Major Donor",
+    "amount": 6388946,
+    "date": "2023-12-10",
+    "campaign": "2c506b9296c5",
+    "location": {
+      "country": "United States",
+      "region": "GA",
+      "coordinates": [
+        -83.85766312762556,
+        31.470032476680984
+      ]
+    },
+    "type": "government",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "cf80eb171a3d",
+    "donorName": "Event Fundraiser",
+    "amount": 616235,
+    "date": "2023-12-12",
+    "campaign": "63bb0f666b7a",
+    "location": {
+      "country": "United States",
+      "region": "OR",
+      "coordinates": [
+        -121.17792384550624,
+        44.67333647387179
+      ]
+    },
+    "type": "foundation",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "6a83c2c3bcf6",
+    "donorName": "Online Campaign",
+    "amount": 27051,
+    "date": "2023-12-15",
+    "campaign": "da6bc2670898",
+    "location": {
+      "country": "United States",
+      "region": "FL",
+      "coordinates": [
+        -80.90842523671657,
+        26.96815414902442
+      ]
+    },
+    "type": "foundation",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "058f1707c959",
+    "donorName": "Charitable Trust",
+    "amount": 75843,
+    "date": "2023-12-16",
+    "campaign": "13b5e51ab66b",
+    "location": {
+      "country": "United States",
+      "region": "IL",
+      "coordinates": [
+        -89.9704787038561,
+        40.33006475846689
+      ]
+    },
+    "type": "individual",
+    "recurring": false,
+    "anonymous": false
+  },
+  {
+    "id": "c942157a71e7",
+    "donorName": "Individual Supporter",
+    "amount": 6446475,
+    "date": "2023-12-22",
+    "campaign": "2c506b9296c5",
+    "location": {
+      "country": "United States",
+      "region": "GA",
+      "coordinates": [
+        -84.04829353540445,
+        33.13665549394075
+      ]
+    },
+    "type": "corporate",
+    "recurring": false,
+    "anonymous": false
+  }
+]
