@@ -1,0 +1,23 @@
+{
+  "name": "donation-impact-tracker-api",
+  "version": "1.0.0",
+  "description": "Azure Functions API for Donation Impact Tracker",
+  "main": "index.js",
+  "scripts": {
+    "start": "func start",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@azure/functions": "^4.0.0",
+    "@azure/openai": "^1.0.0-beta.8",
+    "@azure/cosmos": "^4.0.0",
+    "@azure/storage-blob": "^12.17.0",
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^4.9.5",
+    "azure-functions-core-tools": "^4.0.0"
+  }
+}

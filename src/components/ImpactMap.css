@@ -1,0 +1,287 @@
+.impact-map {
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.impact-map-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  color: #6b7280;
+}
+
+.map-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.map-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.map-header p {
+  font-size: 1.125rem;
+  color: #6b7280;
+  margin: 0 0 1.5rem 0;
+}
+
+.map-controls {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.metric-selector {
+  padding: 0.5rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  background: white;
+  font-size: 1rem;
+  color: #374151;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.metric-selector:hover,
+.metric-selector:focus {
+  border-color: #4f46e5;
+  outline: none;
+}
+
+.map-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.azure-map {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.map-overlay {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  max-width: 250px;
+}
+
+.impact-summary h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.summary-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.map-placeholder {
+  height: 500px;
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.map-content {
+  text-align: center;
+  padding: 2rem;
+  max-width: 600px;
+}
+
+.map-content h3 {
+  font-size: 1.5rem;
+  color: #374151;
+  margin-bottom: 1rem;
+}
+
+.map-content p {
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.map-content ul {
+  text-align: left;
+  color: #4b5563;
+  margin-bottom: 2rem;
+}
+
+.map-content li {
+  margin-bottom: 0.5rem;
+}
+
+.map-stats {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.75rem;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  min-width: 80px;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #4f46e5;
+  margin-bottom: 0.25rem;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  color: #6b7280;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+.map-legend {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.map-legend h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #1f2937;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.legend-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #f3f4f6;
+  transition: background-color 0.2s;
+}
+
+.legend-item:hover {
+  background: #f3f4f6;
+}
+
+.legend-color {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 2px solid white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.legend-item span {
+  font-size: 0.875rem;
+  color: #374151;
+  font-weight: 500;
+}
+
+.map-instructions {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 1rem;
+  border-left: 4px solid #4f46e5;
+}
+
+.map-instructions p {
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.map-instructions ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: #4b5563;
+}
+
+.map-instructions li {
+  margin-bottom: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .impact-map {
+    padding: 1rem;
+  }
+  
+  .map-header h1 {
+    font-size: 2rem;
+  }
+  
+  .map-overlay {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin: 1rem;
+    max-width: none;
+  }
+  
+  .map-container {
+    height: 400px;
+  }
+  
+  .azure-map {
+    height: 300px;
+  }
+  
+  .map-content {
+    padding: 1rem;
+  }
+  
+  .map-stats,
+  .summary-stats {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .legend-items {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat-item {
+    min-width: 100px;
+  }
+}

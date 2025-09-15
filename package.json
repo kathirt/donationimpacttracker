@@ -1,0 +1,51 @@
+{
+  "name": "donation-impact-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "azure-maps-control": "^2.0.31",
+    "azure-maps-rest": "^2.0.31",
+    "@types/node": "^16.18.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "axios": "^1.6.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.0",
+    "react-scripts": "^5.0.1",
+    "recharts": "^2.8.0",
+    "typescript": "^4.9.5",
+    "web-vitals": "^3.0.0",
+    "ajv": "^8.12.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "build:azure": "npm run build",
+    "deploy:azure": "npx @azure/static-web-apps-cli deploy --app-location build --api-location api --output-location build",
+    "dev:azure": "npx @azure/static-web-apps-cli start build --api-location api"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/jest": "^29.0.0"
+  }
+}
