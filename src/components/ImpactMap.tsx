@@ -1,16 +1,15 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import * as atlas from 'azure-maps-control';
-import { mockDonations, mockImpactMetrics } from '../data/mockData';
 import './ImpactMap.css';
 
 export const ImpactMap: React.FC = () => {
   const mapContainerRef = useRef<HTMLDivElement>(null);
-  const [map, setMap] = useState<atlas.Map | null>(null);
+  const [, setMap] = useState<atlas.Map | null>(null);
   const [mapLoaded, setMapLoaded] = useState(false);
   const [selectedMetric, setSelectedMetric] = useState<string>('all');
 
   // Sample coordinates for impact locations
-  const impactLocations = [
+  const impactLocations = useMemo(() => [
     { name: 'Kenya Rural School', position: [37.9062, -0.0236], type: 'education', impact: 450 },
     { name: 'Ghana Library Project', position: [-1.0232, 7.9465], type: 'education', impact: 320 },
     { name: 'India Nutrition Program', position: [77.1025, 28.7041], type: 'nutrition', impact: 1200 },
@@ -19,41 +18,9 @@ export const ImpactMap: React.FC = () => {
     { name: 'Tanzania Water & Education', position: [34.8888, -6.3690], type: 'education', impact: 520 },
     { name: 'Mexico Rural Schools', position: [-102.5528, 23.6345], type: 'education', impact: 380 },
     { name: 'Cambodia Book Distribution', position: [104.9160, 11.5564], type: 'education', impact: 420 }
-  ];
+  ], []);
 
-  useEffect(() => {
-    if (!mapContainerRef.current) return;
-
-    // Initialize Azure Map
-    const mapInstance = new atlas.Map(mapContainerRef.current, {
-      center: [0, 20],
-      zoom: 2,
-      style: 'road',
-      authOptions: {
-        authType: atlas.AuthenticationType.anonymous,
-        clientId: 'your-azure-maps-client-id', // In production, use environment variable
-        getToken: function (resolve, reject, map) {
-          // This would typically call your backend to get a token
-          // For demo purposes, we'll use a placeholder
-          resolve('demo-token');
-        }
-      }
-    });
-
-    mapInstance.events.add('ready', () => {
-      setMap(mapInstance);
-      setMapLoaded(true);
-      addDataToMap(mapInstance);
-    });
-
-    return () => {
-      if (mapInstance) {
-        mapInstance.dispose();
-      }
-    };
-  }, []);
-
-  const addDataToMap = (mapInstance: atlas.Map) => {
+  const addDataToMap = useCallback((mapInstance: atlas.Map) => {
     // Create data source
     const dataSource = new atlas.source.DataSource();
     mapInstance.sources.add(dataSource);
@@ -110,7 +77,39 @@ export const ImpactMap: React.FC = () => {
         popup.open(mapInstance);
       }
     });
-  };
+  }, [impactLocations]);
+
+  useEffect(() => {
+    if (!mapContainerRef.current) return;
+
+    // Initialize Azure Map
+    const mapInstance = new atlas.Map(mapContainerRef.current, {
+      center: [0, 20],
+      zoom: 2,
+      style: 'road',
+      authOptions: {
+        authType: atlas.AuthenticationType.anonymous,
+        clientId: 'your-azure-maps-client-id', // In production, use environment variable
+        getToken: function (resolve, reject, map) {
+          // This would typically call your backend to get a token
+          // For demo purposes, we'll use a placeholder
+          resolve('demo-token');
+        }
+      }
+    });
+
+    mapInstance.events.add('ready', () => {
+      setMap(mapInstance);
+      setMapLoaded(true);
+      addDataToMap(mapInstance);
+    });
+
+    return () => {
+      if (mapInstance) {
+        mapInstance.dispose();
+      }
+    };
+  }, [addDataToMap]);
 
   if (!mapLoaded) {
     return (

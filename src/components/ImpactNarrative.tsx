@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { AzureOpenAIService } from '../services/openai';
 import { mockImpactMetrics, getImpactMetricsByRegion } from '../data/mockData';
 import './ImpactNarrative.css';
@@ -22,11 +22,7 @@ export const ImpactNarrative: React.FC<ImpactNarrativeProps> = ({
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string>('');
 
-  useEffect(() => {
-    generateNarrative();
-  }, [type, donorName, donationAmount, campaign, region]);
-
-  const generateNarrative = async () => {
+  const generateNarrative = useCallback(async () => {
     setLoading(true);
     setError('');
     
@@ -73,7 +69,11 @@ export const ImpactNarrative: React.FC<ImpactNarrativeProps> = ({
     } finally {
       setLoading(false);
     }
-  };
+  }, [type, donorName, donationAmount, campaign, region]);
+
+  useEffect(() => {
+    generateNarrative();
+  }, [generateNarrative]);
 
   if (loading) {
     return (
