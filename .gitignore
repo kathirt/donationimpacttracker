@@ -95,7 +95,7 @@ dist
 
 # Gatsby files
 .cache/
-public
+# Note: public folder is needed for React apps, only exclude for Gatsby
 
 # Vuepress build output
 .vuepress/dist
