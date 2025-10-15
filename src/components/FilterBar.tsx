@@ -9,7 +9,7 @@ interface FilterBarProps {
 export const FilterBar: React.FC<FilterBarProps> = ({ onFilterChange }) => {
   const [filters, setFilters] = useState<FilterOptions>({});
 
-  const handleFilterUpdate = (key: keyof FilterOptions, value: any) => {
+  const handleFilterUpdate = (key: keyof FilterOptions, value: string | undefined) => {
     const newFilters = { ...filters, [key]: value };
     setFilters(newFilters);
     onFilterChange(newFilters);

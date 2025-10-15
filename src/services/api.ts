@@ -32,7 +32,20 @@ apiClient.interceptors.request.use(
 apiClient.interceptors.response.use(
   (response) => response,
   (error) => {
-    console.error('API Error:', error);
+    if (error.response) {
+      // Server responded with error status
+      console.error('API Error Response:', {
+        status: error.response.status,
+        data: error.response.data,
+        url: error.config?.url
+      });
+    } else if (error.request) {
+      // Request made but no response received
+      console.error('API No Response:', error.request);
+    } else {
+      // Error in request configuration
+      console.error('API Request Error:', error.message);
+    }
     return Promise.reject(error);
   }
 );

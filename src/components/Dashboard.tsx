@@ -13,6 +13,8 @@ export const Dashboard: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    let isMounted = true;
+
     // Simulate API call to fetch impact summary
     const fetchImpactSummary = async () => {
       try {
@@ -37,16 +39,25 @@ export const Dashboard: React.FC = () => {
         };
         
         setTimeout(() => {
-          setImpactSummary(mockSummary);
-          setLoading(false);
+          if (isMounted) {
+            setImpactSummary(mockSummary);
+            setLoading(false);
+          }
         }, 1000);
       } catch (error) {
         console.error('Error fetching impact summary:', error);
-        setLoading(false);
+        if (isMounted) {
+          setLoading(false);
+          setImpactSummary(null);
+        }
       }
     };
 
     fetchImpactSummary();
+
+    return () => {
+      isMounted = false;
+    };
   }, [filters]);
 
   const handleFilterChange = (newFilters: FilterOptions) => {

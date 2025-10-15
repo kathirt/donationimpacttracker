@@ -82,17 +82,26 @@ export const ImpactMap: React.FC = () => {
   useEffect(() => {
     if (!mapContainerRef.current) return;
 
-    // Initialize Azure Map
+    // Initialize Azure Map with environment variable
+    const azureMapsClientId = process.env.REACT_APP_AZURE_MAPS_CLIENT_ID;
+    
+    if (!azureMapsClientId) {
+      console.warn('Azure Maps Client ID not configured. Map functionality may be limited.');
+    }
+
     const mapInstance = new atlas.Map(mapContainerRef.current, {
       center: [0, 20],
       zoom: 2,
       style: 'road',
-      authOptions: {
+      authOptions: azureMapsClientId ? {
+        authType: atlas.AuthenticationType.subscriptionKey,
+        subscriptionKey: azureMapsClientId
+      } : {
         authType: atlas.AuthenticationType.anonymous,
-        clientId: 'your-azure-maps-client-id', // In production, use environment variable
-        getToken: function (resolve, reject, map) {
-          // This would typically call your backend to get a token
-          // For demo purposes, we'll use a placeholder
+        clientId: 'demo-client-id',
+        getToken: function (resolve, reject) {
+          // For demo purposes only - in production this should call a backend service
+          console.warn('Using demo authentication. Configure REACT_APP_AZURE_MAPS_CLIENT_ID for production.');
           resolve('demo-token');
         }
       }

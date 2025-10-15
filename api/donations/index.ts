@@ -109,15 +109,34 @@ async function handleCreateDonation(context: Context, req: HttpRequest): Promise
     context.res = {
       ...context.res,
       status: 400,
-      body: { error: 'Missing required fields' }
+      body: { error: 'Missing required fields: donorId, amount, and campaign are required' }
     };
     return;
   }
 
+  // Validate amount is a positive number
+  if (typeof donation.amount !== 'number' || donation.amount <= 0 || !isFinite(donation.amount)) {
+    context.res = {
+      ...context.res,
+      status: 400,
+      body: { error: 'Invalid amount: must be a positive number' }
+    };
+    return;
+  }
+
+  // Sanitize string inputs
+  const sanitizedDonation = {
+    ...donation,
+    donorId: String(donation.donorId).replace(/[<>]/g, '').trim().slice(0, 100),
+    donorName: String(donation.donorName || '').replace(/[<>]/g, '').trim().slice(0, 200),
+    campaign: String(donation.campaign).replace(/[<>]/g, '').trim().slice(0, 200),
+    region: String(donation.region || '').replace(/[<>]/g, '').trim().slice(0, 100)
+  };
+
   // Generate new ID
   const newDonation = {
     id: `don-${Date.now()}`,
-    ...donation,
+    ...sanitizedDonation,
     date: donation.date || new Date().toISOString().split('T')[0]
   };
 

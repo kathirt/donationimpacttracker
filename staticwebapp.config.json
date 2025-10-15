@@ -15,5 +15,12 @@
   },
   "platform": {
     "apiRuntime": "node:18"
+  },
+  "globalHeaders": {
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "DENY",
+    "X-XSS-Protection": "1; mode=block",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' atlas.microsoft.com *.azure.com; style-src 'self' 'unsafe-inline' atlas.microsoft.com; img-src 'self' data: https: atlas.microsoft.com *.azure.com; connect-src 'self' https: *.azure.com atlas.microsoft.com; font-src 'self' data: atlas.microsoft.com; frame-ancestors 'none';"
   }
 }
