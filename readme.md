@@ -164,11 +164,38 @@ The application includes realistic mock data for:
 
 ## 🤝 Contributing
 
+We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
 1. Fork the repository
 2. Create a feature branch
 3. Make your changes
 4. Test thoroughly
 5. Submit a pull request
+
+## 📚 Documentation
+
+- [API Documentation](API_DOCUMENTATION.md) - Complete API reference
+- [Security Guidelines](SECURITY.md) - Security best practices
+- [Code Quality](CODE_QUALITY.md) - Code standards and guidelines
+- [Contributing](CONTRIBUTING.md) - How to contribute
+- [Code Review Summary](CODE_REVIEW_SUMMARY.md) - Latest review findings
+- [Deployment Guide](DEPLOYMENT.md) - Azure deployment instructions
+
+## 🔒 Security
+
+- ✅ CodeQL security analysis passed with 0 alerts
+- ✅ Input validation and sanitization implemented
+- ✅ Security headers configured (CSP, X-Frame-Options, etc.)
+- ✅ Environment variables for sensitive data
+- See [SECURITY.md](SECURITY.md) for complete security policy
+
+## 📊 Code Quality
+
+- ✅ TypeScript strict mode enabled
+- ✅ Error boundaries for graceful error handling
+- ✅ Comprehensive documentation
+- ✅ Accessibility features (ARIA labels, semantic HTML)
+- See [CODE_QUALITY.md](CODE_QUALITY.md) for standards
 
 ## 📄 License
 
@@ -176,9 +203,11 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 🆘 Support
 
-For deployment help, see [DEPLOYMENT.md](DEPLOYMENT.md)
-For issues, please create a GitHub issue
-For questions, contact the development team
+- For deployment help, see [DEPLOYMENT.md](DEPLOYMENT.md)
+- For API questions, see [API_DOCUMENTATION.md](API_DOCUMENTATION.md)
+- For security concerns, see [SECURITY.md](SECURITY.md)
+- For issues, please create a GitHub issue
+- For questions, contact the development team
 
 ---
 
