@@ -74,6 +74,18 @@ npm install
 func start
 ```
 
+### Running Tests
+The project includes comprehensive integration tests. See [TESTING.md](TESTING.md) for detailed documentation.
+
+```bash
+# Run frontend tests
+npm test
+
+# Run API tests
+cd api
+npm test
+```
+
 ## 📱 Features Implemented
 
 ### ✅ Completed
@@ -86,6 +98,7 @@ func start
 - Azure Functions backend structure
 - Mock data for education nonprofit
 - Deployment configuration for Azure Static Web Apps
+- **Comprehensive integration tests** (47 tests covering API endpoints and services)
 
 ### 🔄 In Progress
 - Power BI embedded dashboards
@@ -167,8 +180,9 @@ The application includes realistic mock data for:
 1. Fork the repository
 2. Create a feature branch
 3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
+4. Write/update tests (see [TESTING.md](TESTING.md))
+5. Test thoroughly
+6. Submit a pull request
 
 ## 📄 License
 
