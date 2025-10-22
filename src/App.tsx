@@ -4,6 +4,8 @@ import { Navbar } from './components/Navbar';
 import { Dashboard } from './components/Dashboard';
 import { ImpactMap } from './components/ImpactMap';
 import { DonorView } from './components/DonorView';
+import { DonorProfile } from './components/DonorProfile';
+import { CreateDonorProfile } from './components/CreateDonorProfile';
 import { CampaignView } from './components/CampaignView';
 import './App.css';
 
@@ -18,6 +20,8 @@ const App: React.FC = () => {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/map" element={<ImpactMap />} />
             <Route path="/donors" element={<DonorView />} />
+            <Route path="/donors/create" element={<CreateDonorProfile />} />
+            <Route path="/donors/:donorId" element={<DonorProfile />} />
             <Route path="/campaigns" element={<CampaignView />} />
           </Routes>
         </main>

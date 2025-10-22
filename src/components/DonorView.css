@@ -12,8 +12,14 @@
 }
 
 .donor-header {
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 2rem;
+}
+
+.header-content {
+  text-align: left;
 }
 
 .donor-header h1 {
@@ -27,6 +33,23 @@
   font-size: 1.125rem;
   color: #6b7280;
   margin: 0;
+}
+
+.create-profile-button {
+  background: #4f46e5;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  white-space: nowrap;
+}
+
+.create-profile-button:hover {
+  background: #4338ca;
 }
 
 .donor-stats {
@@ -74,6 +97,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border: 1px solid #e5e7eb;
   transition: all 0.2s ease;
+  cursor: pointer;
 }
 
 .donor-card:hover {
@@ -175,8 +199,22 @@
 }
 
 @media (max-width: 768px) {
+  .donor-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .header-content {
+    text-align: left;
+  }
+
   .donor-header h1 {
     font-size: 2rem;
+  }
+
+  .create-profile-button {
+    width: 100%;
   }
   
   .donor-grid {
