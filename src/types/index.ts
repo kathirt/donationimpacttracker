@@ -10,6 +10,8 @@ export interface Donation {
     latitude: number;
     longitude: number;
   };
+  status?: 'pending' | 'processing' | 'completed' | 'impact_generated';
+  notificationSent?: boolean;
 }
 
 export interface ImpactMetric {
@@ -34,6 +36,7 @@ export interface Donor {
   donationCount: number;
   preferredCampaigns: string[];
   joinDate: string;
+  notificationPreferences?: NotificationPreferences;
 }
 
 export interface Campaign {
@@ -76,4 +79,28 @@ export interface FilterOptions {
     end: string;
   };
   impactType?: string;
+}
+
+export interface Notification {
+  id: string;
+  donorId: string;
+  type: 'donation_received' | 'impact_update' | 'milestone_reached' | 'thank_you';
+  title: string;
+  message: string;
+  donationId?: string;
+  impactMetricId?: string;
+  date: string;
+  read: boolean;
+  priority: 'low' | 'medium' | 'high';
+}
+
+export interface NotificationPreferences {
+  email: boolean;
+  inApp: boolean;
+  frequency: 'immediate' | 'daily' | 'weekly' | 'monthly';
+  types: {
+    donationReceived: boolean;
+    impactUpdates: boolean;
+    milestoneReached: boolean;
+  };
 }
