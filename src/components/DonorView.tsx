@@ -1,54 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Donor } from '../types';
+import { mockDonors } from '../data/mockData';
 import { ImpactNarrative } from './ImpactNarrative';
 import './DonorView.css';
 
 export const DonorView: React.FC = () => {
+  const navigate = useNavigate();
   const [donors, setDonors] = useState<Donor[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Simulate API call to fetch donors
     const fetchDonors = async () => {
-      const mockDonors: Donor[] = [
-        {
-          id: 'donor-1',
-          name: 'John Doe',
-          email: 'john.doe@email.com',
-          totalDonated: 2500,
-          donationCount: 8,
-          preferredCampaigns: ['School Lunch Program', 'Digital Learning Initiative'],
-          joinDate: '2023-03-15'
-        },
-        {
-          id: 'donor-2',
-          name: 'Jane Smith',
-          email: 'jane.smith@email.com',
-          totalDonated: 1800,
-          donationCount: 6,
-          preferredCampaigns: ['Scholarship Fund', 'Library Books Drive'],
-          joinDate: '2023-05-22'
-        },
-        {
-          id: 'donor-3',
-          name: 'Education Foundation',
-          email: 'contact@educfoundation.org',
-          totalDonated: 15000,
-          donationCount: 25,
-          preferredCampaigns: ['School Lunch Program', 'Scholarship Fund', 'Digital Learning Initiative'],
-          joinDate: '2022-09-10'
-        },
-        {
-          id: 'donor-4',
-          name: 'Tech for Good',
-          email: 'donate@techforgood.org',
-          totalDonated: 8500,
-          donationCount: 15,
-          preferredCampaigns: ['Digital Learning Initiative', 'Library Books Drive'],
-          joinDate: '2023-01-08'
-        }
-      ];
-
       setTimeout(() => {
         setDonors(mockDonors);
         setLoading(false);
@@ -86,8 +50,16 @@ export const DonorView: React.FC = () => {
   return (
     <div className="donor-view">
       <div className="donor-header">
-        <h1>Donor Community</h1>
-        <p>Meet the amazing people making a difference</p>
+        <div className="header-content">
+          <h1>Donor Community</h1>
+          <p>Meet the amazing people making a difference</p>
+        </div>
+        <button 
+          className="create-profile-button"
+          onClick={() => navigate('/donors/create')}
+        >
+          + Create Profile
+        </button>
       </div>
 
       <div className="donor-stats">
@@ -132,7 +104,11 @@ export const DonorView: React.FC = () => {
 
       <div className="donor-grid">
         {donors.map((donor) => (
-          <div key={donor.id} className="donor-card">
+          <div 
+            key={donor.id} 
+            className="donor-card" 
+            onClick={() => navigate(`/donors/${donor.id}`)}
+          >
             <div className="donor-avatar">
               <span>{donor.name.split(' ').map(n => n[0]).join('')}</span>
             </div>
