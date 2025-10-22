@@ -12,21 +12,45 @@
 }
 
 .donor-header {
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 2rem;
 }
 
-.donor-header h1 {
+.donor-header > div h1 {
   font-size: 2.5rem;
   font-weight: 700;
   color: #1f2937;
   margin-bottom: 0.5rem;
 }
 
-.donor-header p {
+.donor-header > div p {
   font-size: 1.125rem;
   color: #6b7280;
   margin: 0;
+}
+
+.preferences-button {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.preferences-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.preferences-container {
+  margin-bottom: 2rem;
 }
 
 .donor-stats {
@@ -174,9 +198,23 @@
   color: #9ca3af;
 }
 
+.featured-donor-narrative {
+  margin-bottom: 2rem;
+}
+
 @media (max-width: 768px) {
-  .donor-header h1 {
+  .donor-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .donor-header > div h1 {
     font-size: 2rem;
+  }
+
+  .preferences-button {
+    width: 100%;
   }
   
   .donor-grid {

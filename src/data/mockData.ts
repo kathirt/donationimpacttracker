@@ -1,4 +1,4 @@
-import { Donation, ImpactMetric, Donor, Campaign } from '../types';
+import { Donation, ImpactMetric, Donor, Campaign, Notification } from '../types';
 
 // Mock donation data
 export const mockDonations: Donation[] = [
@@ -177,7 +177,17 @@ export const mockDonors: Donor[] = [
     totalDonated: 2500,
     donationCount: 8,
     preferredCampaigns: ['School Lunch Program', 'Digital Learning Initiative'],
-    joinDate: '2023-03-15'
+    joinDate: '2023-03-15',
+    notificationPreferences: {
+      email: true,
+      inApp: true,
+      frequency: 'immediate',
+      types: {
+        donationReceived: true,
+        impactUpdates: true,
+        milestoneReached: true
+      }
+    }
   },
   {
     id: 'donor-002',
@@ -338,4 +348,125 @@ export const getRegionalBreakdown = () => {
   });
   
   return regionBreakdown;
+};
+
+// Mock notification data
+export const mockNotifications: Notification[] = [
+  {
+    id: 'notif-001',
+    donorId: 'donor-001',
+    type: 'donation_received',
+    title: 'Thank you for your donation!',
+    message: 'We received your $500 donation to the School Lunch Program. Your generosity is making a real difference!',
+    donationId: 'don-001',
+    date: '2024-01-15T10:30:00Z',
+    read: false,
+    priority: 'high'
+  },
+  {
+    id: 'notif-002',
+    donorId: 'donor-001',
+    type: 'impact_update',
+    title: 'Your donation is making an impact!',
+    message: 'Your contribution helped serve 150 nutritious meals to elementary school students in North America.',
+    donationId: 'don-001',
+    impactMetricId: 'imp-001',
+    date: '2024-01-16T14:20:00Z',
+    read: true,
+    priority: 'medium'
+  },
+  {
+    id: 'notif-003',
+    donorId: 'donor-001',
+    type: 'milestone_reached',
+    title: 'Milestone Reached! 🎉',
+    message: 'Thanks to donors like you, the School Lunch Program has now served over 10,000 meals this year!',
+    date: '2024-01-18T09:00:00Z',
+    read: true,
+    priority: 'high'
+  },
+  {
+    id: 'notif-004',
+    donorId: 'donor-001',
+    type: 'impact_update',
+    title: 'New Impact Update',
+    message: 'Your $300 donation to Digital Learning Initiative has provided digital learning access to 30 students.',
+    donationId: 'don-005',
+    impactMetricId: 'imp-005',
+    date: '2024-01-11T11:45:00Z',
+    read: false,
+    priority: 'medium'
+  },
+  {
+    id: 'notif-005',
+    donorId: 'donor-002',
+    type: 'donation_received',
+    title: 'Thank you for your support!',
+    message: 'We received your $250 donation to the Digital Learning Initiative. Together, we\'re transforming education!',
+    donationId: 'don-002',
+    date: '2024-01-14T15:30:00Z',
+    read: false,
+    priority: 'high'
+  },
+  {
+    id: 'notif-006',
+    donorId: 'donor-002',
+    type: 'impact_update',
+    title: 'Impact Report: Digital Learning Initiative',
+    message: '25 digital learning tablets have been distributed to rural schools in Europe thanks to your contribution.',
+    donationId: 'don-002',
+    impactMetricId: 'imp-002',
+    date: '2024-01-15T10:00:00Z',
+    read: true,
+    priority: 'medium'
+  },
+  {
+    id: 'notif-007',
+    donorId: 'donor-003',
+    type: 'donation_received',
+    title: 'Thank you, Education Foundation!',
+    message: 'Your generous $1,000 donation to the Scholarship Fund will change lives. Thank you for believing in education!',
+    donationId: 'don-003',
+    date: '2024-01-13T12:00:00Z',
+    read: true,
+    priority: 'high'
+  },
+  {
+    id: 'notif-008',
+    donorId: 'donor-003',
+    type: 'impact_update',
+    title: 'Scholarship Recipients Announced',
+    message: '2 full scholarships have been awarded to deserving students in Asia. Your support is creating opportunities!',
+    donationId: 'don-003',
+    impactMetricId: 'imp-003',
+    date: '2024-01-14T16:30:00Z',
+    read: false,
+    priority: 'high'
+  }
+];
+
+// Helper functions for notifications
+export const getNotificationsByDonor = (donorId: string): Notification[] => {
+  return mockNotifications.filter(notification => notification.donorId === donorId);
+};
+
+export const getUnreadNotificationCount = (donorId: string): number => {
+  return mockNotifications.filter(notification => 
+    notification.donorId === donorId && !notification.read
+  ).length;
+};
+
+export const markNotificationAsRead = (notificationId: string): void => {
+  const notification = mockNotifications.find(n => n.id === notificationId);
+  if (notification) {
+    notification.read = true;
+  }
+};
+
+export const markAllNotificationsAsRead = (donorId: string): void => {
+  mockNotifications.forEach(notification => {
+    if (notification.donorId === donorId) {
+      notification.read = true;
+    }
+  });
 };
