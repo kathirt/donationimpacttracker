@@ -12,15 +12,16 @@ interface SocialShareProps {
 export const SocialShare: React.FC<SocialShareProps> = ({ 
   title, 
   text, 
-  url = window.location.href,
+  url,
   hashtags = ['DonationImpact', 'MakeADifference'],
   variant = 'compact'
 }) => {
+  const shareUrl = url || (typeof window !== 'undefined' ? window.location.href : '');
   const [showTooltip, setShowTooltip] = useState(false);
   const [copiedLink, setCopiedLink] = useState(false);
 
   const encodedText = encodeURIComponent(text);
-  const encodedUrl = encodeURIComponent(url);
+  const encodedUrl = encodeURIComponent(shareUrl);
   const encodedTitle = encodeURIComponent(title);
   const hashtagString = hashtags.join(',');
 
@@ -33,13 +34,13 @@ export const SocialShare: React.FC<SocialShareProps> = ({
   };
 
   const handleShare = (platform: keyof typeof shareLinks) => {
-    const shareUrl = shareLinks[platform];
-    window.open(shareUrl, '_blank', 'width=600,height=400');
+    const sharePlatformUrl = shareLinks[platform];
+    window.open(sharePlatformUrl, '_blank', 'noopener,noreferrer,width=600,height=400');
   };
 
   const handleCopyLink = async () => {
     try {
-      await navigator.clipboard.writeText(url);
+      await navigator.clipboard.writeText(shareUrl);
       setCopiedLink(true);
       setTimeout(() => setCopiedLink(false), 2000);
     } catch (err) {
@@ -53,7 +54,7 @@ export const SocialShare: React.FC<SocialShareProps> = ({
         await navigator.share({
           title,
           text,
-          url
+          url: shareUrl
         });
       } catch (err) {
         console.error('Error sharing:', err);
