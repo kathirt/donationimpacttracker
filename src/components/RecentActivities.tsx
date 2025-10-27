@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Donation, ImpactMetric, FilterOptions } from '../types';
+import { SocialShare } from './SocialShare';
+import { generateDonationShareText, generateImpactShareText, generateShareTitle } from '../utils/shareUtils';
 import './RecentActivities.css';
 
 interface RecentActivitiesProps {
@@ -166,7 +168,17 @@ export const RecentActivities: React.FC<RecentActivitiesProps> = ({ filters }) =
                     <span className="activity-campaign">{donation.campaign}</span>
                     <span className="activity-region">{donation.region}</span>
                   </div>
-                  <div className="activity-date">{formatDate(donation.date)}</div>
+                  <div className="activity-footer">
+                    <div className="activity-date">{formatDate(donation.date)}</div>
+                    <div className="activity-share">
+                      <SocialShare
+                        title={generateShareTitle('donation')}
+                        text={generateDonationShareText(donation)}
+                        hashtags={['Donation', donation.campaign.replace(/\s+/g, '')]}
+                        variant="compact"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
@@ -185,9 +197,19 @@ export const RecentActivities: React.FC<RecentActivitiesProps> = ({ filters }) =
                     <span className="activity-value">{impact.value.toLocaleString()}</span>
                   </div>
                   <div className="activity-description">{impact.description}</div>
-                  <div className="activity-details">
-                    <span className="activity-region">{impact.region}</span>
-                    <span className="activity-date">{formatDate(impact.date)}</span>
+                  <div className="activity-footer">
+                    <div className="activity-details">
+                      <span className="activity-region">{impact.region}</span>
+                      <span className="activity-date">{formatDate(impact.date)}</span>
+                    </div>
+                    <div className="activity-share">
+                      <SocialShare
+                        title={generateShareTitle('impact')}
+                        text={generateImpactShareText(impact)}
+                        hashtags={['Impact', impact.type.replace('_', '')]}
+                        variant="compact"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>

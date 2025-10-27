@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Donor } from '../types';
 import { ImpactNarrative } from './ImpactNarrative';
+import { SocialShare } from './SocialShare';
+import { generateDonorImpactText, generateShareTitle } from '../utils/shareUtils';
 import './DonorView.css';
 
 export const DonorView: React.FC = () => {
@@ -157,8 +159,18 @@ export const DonorView: React.FC = () => {
                   ))}
                 </div>
               </div>
-              <div className="donor-join-date">
-                <span>Member since {formatDate(donor.joinDate)}</span>
+              <div className="donor-footer">
+                <div className="donor-join-date">
+                  <span>Member since {formatDate(donor.joinDate)}</span>
+                </div>
+                <div className="donor-share">
+                  <SocialShare
+                    title={generateShareTitle('donation')}
+                    text={generateDonorImpactText(donor.name, donor.totalDonated, donor.donationCount)}
+                    hashtags={['Donor', 'Philanthropy']}
+                    variant="compact"
+                  />
+                </div>
               </div>
             </div>
           </div>
