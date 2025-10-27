@@ -5,6 +5,8 @@ import { FilterBar } from './FilterBar';
 import { ImpactChart } from './ImpactChart';
 import { RecentActivities } from './RecentActivities';
 import { ImpactNarrative } from './ImpactNarrative';
+import { SocialShare } from './SocialShare';
+import { generateSummaryShareText, generateShareTitle } from '../utils/shareUtils';
 import './Dashboard.css';
 
 export const Dashboard: React.FC = () => {
@@ -99,6 +101,16 @@ export const Dashboard: React.FC = () => {
           
           <div className="dashboard-section full-width">
             <RecentActivities filters={filters} />
+          </div>
+
+          {/* Social Sharing Section */}
+          <div className="dashboard-section full-width">
+            <SocialShare
+              title={generateShareTitle('summary')}
+              text={generateSummaryShareText(impactSummary)}
+              hashtags={['DonationImpact', 'MakeADifference', 'Education']}
+              variant="expanded"
+            />
           </div>
         </div>
       </div>

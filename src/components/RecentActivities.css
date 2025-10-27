@@ -118,9 +118,21 @@
   line-height: 1.4;
 }
 
+.activity-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
 .activity-date {
   font-size: 0.75rem;
   color: #9ca3af;
+}
+
+.activity-share {
+  display: flex;
+  align-items: center;
 }
 
 .donation-item {
