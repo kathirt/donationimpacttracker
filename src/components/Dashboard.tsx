@@ -5,6 +5,7 @@ import { FilterBar } from './FilterBar';
 import { ImpactChart } from './ImpactChart';
 import { RecentActivities } from './RecentActivities';
 import { ImpactNarrative } from './ImpactNarrative';
+import { TestimonialsWidget } from './TestimonialsWidget';
 import './Dashboard.css';
 
 export const Dashboard: React.FC = () => {
@@ -99,6 +100,10 @@ export const Dashboard: React.FC = () => {
           
           <div className="dashboard-section full-width">
             <RecentActivities filters={filters} />
+          </div>
+          
+          <div className="dashboard-section full-width">
+            <TestimonialsWidget limit={3} />
           </div>
         </div>
       </div>

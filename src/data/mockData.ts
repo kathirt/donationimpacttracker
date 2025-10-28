@@ -1,4 +1,4 @@
-import { Donation, ImpactMetric, Donor, Campaign } from '../types';
+import { Donation, ImpactMetric, Donor, Campaign, Testimonial } from '../types';
 
 // Mock donation data
 export const mockDonations: Donation[] = [
@@ -338,4 +338,119 @@ export const getRegionalBreakdown = () => {
   });
   
   return regionBreakdown;
+};
+
+// Mock testimonials data
+export const mockTestimonials: Testimonial[] = [
+  {
+    id: 'test-001',
+    beneficiaryName: 'Maria Rodriguez',
+    role: 'Student',
+    campaign: 'School Lunch Program',
+    region: 'South America',
+    message: 'Thanks to the school lunch program, I can focus on my studies without worrying about hunger. The nutritious meals have helped me maintain good health and energy throughout the day. I am so grateful for this support!',
+    date: '2024-01-20',
+    impactType: 'meals_served',
+    rating: 5,
+    verified: true
+  },
+  {
+    id: 'test-002',
+    beneficiaryName: 'Ahmed Hassan',
+    role: 'Teacher',
+    campaign: 'Digital Learning Initiative',
+    region: 'Africa',
+    message: 'The tablets and digital resources have transformed our classroom. Students are more engaged and excited to learn. We can now access educational content that was impossible before. This initiative has truly bridged the digital divide.',
+    date: '2024-01-18',
+    impactType: 'books_distributed',
+    rating: 5,
+    verified: true
+  },
+  {
+    id: 'test-003',
+    beneficiaryName: 'Li Wei',
+    role: 'Scholarship Recipient',
+    campaign: 'Scholarship Fund',
+    region: 'Asia',
+    message: 'Receiving this scholarship changed my life. As the first in my family to attend university, I would not have been able to pursue higher education without this support. I am now studying engineering and hope to give back to my community.',
+    date: '2024-01-15',
+    impactType: 'scholarships_provided',
+    rating: 5,
+    verified: true
+  },
+  {
+    id: 'test-004',
+    beneficiaryName: 'Sarah Johnson',
+    role: 'Librarian',
+    campaign: 'Library Books Drive',
+    region: 'North America',
+    message: 'The new books have brought so much joy to our community. Children who never had access to quality reading materials are now visiting the library regularly. We have seen a significant improvement in reading levels and enthusiasm for learning.',
+    date: '2024-01-12',
+    impactType: 'books_distributed',
+    rating: 5,
+    verified: true
+  },
+  {
+    id: 'test-005',
+    beneficiaryName: 'Carlos Mendoza',
+    role: 'Parent',
+    campaign: 'School Lunch Program',
+    region: 'South America',
+    message: 'As a single parent working two jobs, this program has been a blessing. Knowing my children are receiving nutritious meals at school gives me peace of mind. Their grades have improved and they are healthier and happier.',
+    date: '2024-01-10',
+    impactType: 'meals_served',
+    rating: 5,
+    verified: true
+  },
+  {
+    id: 'test-006',
+    beneficiaryName: 'Fatima Al-Said',
+    role: 'Student',
+    campaign: 'Digital Learning Initiative',
+    region: 'Asia',
+    message: 'The digital learning tools opened up a world of possibilities for me. I can now learn at my own pace and access resources from top universities. This has helped me discover my passion for computer science.',
+    date: '2024-01-08',
+    impactType: 'students_supported',
+    rating: 5,
+    verified: true
+  },
+  {
+    id: 'test-007',
+    beneficiaryName: 'Emma Thompson',
+    role: 'School Principal',
+    campaign: 'School Lunch Program',
+    region: 'Europe',
+    message: 'The school lunch program has had a remarkable impact on attendance and academic performance. Students are arriving ready to learn, and we have seen a 25% improvement in test scores since the program started.',
+    date: '2024-01-05',
+    impactType: 'meals_served',
+    rating: 5,
+    verified: true
+  },
+  {
+    id: 'test-008',
+    beneficiaryName: 'Kwame Osei',
+    role: 'Community Leader',
+    campaign: 'Library Books Drive',
+    region: 'Africa',
+    message: 'The library has become the heart of our community. Not only are children reading more, but adults are also using it for self-improvement and job training. This investment in education is creating lasting change.',
+    date: '2024-01-03',
+    impactType: 'books_distributed',
+    rating: 5,
+    verified: true
+  }
+];
+
+// Helper functions for testimonials
+export const getTestimonialsByRegion = (region?: string): Testimonial[] => {
+  if (!region) return mockTestimonials;
+  return mockTestimonials.filter(testimonial => testimonial.region === region);
+};
+
+export const getTestimonialsByCampaign = (campaign?: string): Testimonial[] => {
+  if (!campaign) return mockTestimonials;
+  return mockTestimonials.filter(testimonial => testimonial.campaign === campaign);
+};
+
+export const getVerifiedTestimonials = (): Testimonial[] => {
+  return mockTestimonials.filter(testimonial => testimonial.verified);
 };

@@ -77,3 +77,29 @@ export interface FilterOptions {
   };
   impactType?: string;
 }
+
+export interface Testimonial {
+  id: string;
+  beneficiaryName: string;
+  role: string;
+  campaign: string;
+  region: string;
+  message: string;
+  date: string;
+  impactType?: string;
+  rating?: number;
+  verified: boolean;
+}
+
+export interface Feedback {
+  id: string;
+  beneficiaryName: string;
+  email?: string;
+  campaign: string;
+  region: string;
+  feedbackType: 'testimonial' | 'suggestion' | 'concern' | 'gratitude';
+  message: string;
+  rating?: number;
+  date: string;
+  status: 'pending' | 'approved' | 'published';
+}

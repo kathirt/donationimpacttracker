@@ -1,0 +1,153 @@
+.testimonials-widget {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.widget-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e1e8ed;
+}
+
+.widget-header h2 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.view-all-link {
+  color: #3498db;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.view-all-link:hover {
+  color: #2980b9;
+}
+
+.widget-testimonials {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.widget-testimonial-card {
+  padding: 1.5rem;
+  border: 2px solid #e1e8ed;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.widget-testimonial-card:hover {
+  border-color: #3498db;
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.1);
+}
+
+.widget-beneficiary {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.widget-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.widget-info {
+  flex: 1;
+}
+
+.widget-info h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: #2c3e50;
+}
+
+.widget-role {
+  margin: 0.2rem 0 0 0;
+  font-size: 0.85rem;
+  color: #7f8c8d;
+}
+
+.widget-rating {
+  display: flex;
+  gap: 0.1rem;
+}
+
+.widget-rating .star {
+  font-size: 0.9rem;
+  color: #f39c12;
+}
+
+.widget-message {
+  color: #34495e;
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+  font-size: 0.95rem;
+}
+
+.widget-meta {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.widget-campaign {
+  padding: 0.3rem 0.6rem;
+  background: #e3f2fd;
+  color: #1976d2;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.share-feedback-btn {
+  display: block;
+  width: 100%;
+  padding: 0.8rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.share-feedback-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(102, 126, 234, 0.4);
+}
+
+@media (max-width: 768px) {
+  .testimonials-widget {
+    padding: 1.5rem;
+  }
+
+  .widget-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .widget-testimonial-card {
+    padding: 1rem;
+  }
+}
