@@ -55,10 +55,11 @@ export const Testimonials: React.FC = () => {
   const campaigns = ['all', ...Array.from(new Set(testimonials.map(t => t.campaign)))];
 
   const renderStars = (rating: number = 5) => {
+    const validRating = Math.max(0, Math.min(5, rating)); // Ensure rating is between 0 and 5
     return (
       <div className="testimonial-rating">
         {[...Array(5)].map((_, i) => (
-          <span key={i} className={i < rating ? 'star filled' : 'star'}>
+          <span key={i} className={i < validRating ? 'star filled' : 'star'}>
             ★
           </span>
         ))}
@@ -124,7 +125,7 @@ export const Testimonials: React.FC = () => {
             <div className="testimonial-header">
               <div className="beneficiary-info">
                 <div className="beneficiary-avatar">
-                  {testimonial.beneficiaryName.split(' ').map(n => n[0]).join('')}
+                  {testimonial.beneficiaryName.split(/\s+/).filter(n => n).map(n => n[0]).join('')}
                 </div>
                 <div className="beneficiary-details">
                   <h3>{testimonial.beneficiaryName}</h3>

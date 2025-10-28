@@ -6,9 +6,13 @@ import './TestimonialsWidget.css';
 
 interface TestimonialsWidgetProps {
   limit?: number;
+  messageLength?: number;
 }
 
-export const TestimonialsWidget: React.FC<TestimonialsWidgetProps> = ({ limit = 3 }) => {
+export const TestimonialsWidget: React.FC<TestimonialsWidgetProps> = ({ 
+  limit = 3, 
+  messageLength = 150 
+}) => {
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
 
   useEffect(() => {
@@ -17,9 +21,10 @@ export const TestimonialsWidget: React.FC<TestimonialsWidgetProps> = ({ limit = 
   }, [limit]);
 
   const renderStars = (rating: number = 5) => {
+    const validRating = Math.max(0, Math.min(5, rating)); // Ensure rating is between 0 and 5
     return (
       <div className="widget-rating">
-        {[...Array(rating)].map((_, i) => (
+        {[...Array(validRating)].map((_, i) => (
           <span key={i} className="star filled">★</span>
         ))}
       </div>
@@ -38,7 +43,7 @@ export const TestimonialsWidget: React.FC<TestimonialsWidgetProps> = ({ limit = 
           <div key={testimonial.id} className="widget-testimonial-card">
             <div className="widget-beneficiary">
               <div className="widget-avatar">
-                {testimonial.beneficiaryName.split(' ').map(n => n[0]).join('')}
+                {testimonial.beneficiaryName.split(/\s+/).filter(n => n).map(n => n[0]).join('')}
               </div>
               <div className="widget-info">
                 <h4>{testimonial.beneficiaryName}</h4>
@@ -46,7 +51,7 @@ export const TestimonialsWidget: React.FC<TestimonialsWidgetProps> = ({ limit = 
               </div>
               {renderStars(testimonial.rating)}
             </div>
-            <p className="widget-message">{testimonial.message.substring(0, 150)}...</p>
+            <p className="widget-message">{testimonial.message.substring(0, messageLength)}...</p>
             <div className="widget-meta">
               <span className="widget-campaign">{testimonial.campaign}</span>
             </div>
