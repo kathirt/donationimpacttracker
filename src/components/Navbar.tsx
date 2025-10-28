@@ -10,6 +10,8 @@ export const Navbar: React.FC = () => {
     { path: '/map', label: 'Impact Map', icon: '🗺️' },
     { path: '/donors', label: 'Donors', icon: '👥' },
     { path: '/campaigns', label: 'Campaigns', icon: '🎯' },
+    { path: '/testimonials', label: 'Testimonials', icon: '💬' },
+    { path: '/feedback', label: 'Feedback', icon: '✍️' },
   ];
 
   return (

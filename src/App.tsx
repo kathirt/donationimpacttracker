@@ -5,6 +5,8 @@ import { Dashboard } from './components/Dashboard';
 import { ImpactMap } from './components/ImpactMap';
 import { DonorView } from './components/DonorView';
 import { CampaignView } from './components/CampaignView';
+import { Testimonials } from './components/Testimonials';
+import { FeedbackForm } from './components/FeedbackForm';
 import './App.css';
 
 const App: React.FC = () => {
@@ -19,6 +21,8 @@ const App: React.FC = () => {
             <Route path="/map" element={<ImpactMap />} />
             <Route path="/donors" element={<DonorView />} />
             <Route path="/campaigns" element={<CampaignView />} />
+            <Route path="/testimonials" element={<Testimonials />} />
+            <Route path="/feedback" element={<FeedbackForm />} />
           </Routes>
         </main>
       </div>
