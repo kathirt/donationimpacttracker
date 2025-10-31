@@ -5,6 +5,7 @@ import { Dashboard } from './components/Dashboard';
 import { ImpactMap } from './components/ImpactMap';
 import { DonorView } from './components/DonorView';
 import { CampaignView } from './components/CampaignView';
+import { AdminDashboard } from './components/AdminDashboard';
 import './App.css';
 
 const App: React.FC = () => {
@@ -19,6 +20,7 @@ const App: React.FC = () => {
             <Route path="/map" element={<ImpactMap />} />
             <Route path="/donors" element={<DonorView />} />
             <Route path="/campaigns" element={<CampaignView />} />
+            <Route path="/admin" element={<AdminDashboard />} />
           </Routes>
         </main>
       </div>
