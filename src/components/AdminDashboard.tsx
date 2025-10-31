@@ -3,10 +3,12 @@ import { AdminAnalytics } from '../types';
 import { LineChart, Line, BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import './AdminDashboard.css';
 
+type TimeRange = '7d' | '30d' | '90d' | '1y';
+
 export const AdminDashboard: React.FC = () => {
   const [analytics, setAnalytics] = useState<AdminAnalytics | null>(null);
   const [loading, setLoading] = useState(true);
-  const [timeRange, setTimeRange] = useState<'7d' | '30d' | '90d' | '1y'>('30d');
+  const [timeRange, setTimeRange] = useState<TimeRange>('30d');
 
   useEffect(() => {
     // Simulate API call to fetch admin analytics
@@ -103,7 +105,9 @@ export const AdminDashboard: React.FC = () => {
     const link = document.createElement('a');
     link.href = url;
     link.download = `analytics-export-${new Date().toISOString().split('T')[0]}.json`;
+    document.body.appendChild(link);
     link.click();
+    document.body.removeChild(link);
     URL.revokeObjectURL(url);
   };
 
@@ -137,7 +141,7 @@ export const AdminDashboard: React.FC = () => {
           <select 
             className="time-range-selector"
             value={timeRange} 
-            onChange={(e) => setTimeRange(e.target.value as any)}
+            onChange={(e) => setTimeRange(e.target.value as TimeRange)}
           >
             <option value="7d">Last 7 Days</option>
             <option value="30d">Last 30 Days</option>
@@ -250,7 +254,8 @@ export const AdminDashboard: React.FC = () => {
               />
               <Tooltip 
                 formatter={(value: number, name: string) => {
-                  if (name === 'amount') return [formatCurrency(value), 'Amount'];
+                  const CHART_KEYS = { AMOUNT: 'amount', COUNT: 'count' } as const;
+                  if (name === CHART_KEYS.AMOUNT) return [formatCurrency(value), 'Amount'];
                   return [value, 'Count'];
                 }}
                 labelFormatter={formatDate}
