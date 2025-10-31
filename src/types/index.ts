@@ -77,3 +77,42 @@ export interface FilterOptions {
   };
   impactType?: string;
 }
+
+export interface DonorEngagement {
+  totalDonors: number;
+  activeDonors: number;
+  newDonors: number;
+  retentionRate: number;
+  averageDonation: number;
+  topDonors: Array<{
+    id: string;
+    name: string;
+    totalDonated: number;
+    lastDonation: string;
+  }>;
+}
+
+export interface DonationTrend {
+  date: string;
+  amount: number;
+  count: number;
+}
+
+export interface AdminAnalytics {
+  donorEngagement: DonorEngagement;
+  donationTrends: DonationTrend[];
+  campaignPerformance: Array<{
+    campaignId: string;
+    name: string;
+    raised: number;
+    goal: number;
+    donorCount: number;
+    avgDonation: number;
+  }>;
+  regionalBreakdown: Array<{
+    region: string;
+    donations: number;
+    amount: number;
+    donors: number;
+  }>;
+}
