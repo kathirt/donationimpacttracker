@@ -77,3 +77,21 @@ export interface FilterOptions {
   };
   impactType?: string;
 }
+
+export interface BeneficiaryUpdate {
+  id: string;
+  beneficiaryName: string;
+  beneficiaryAge?: number;
+  beneficiaryLocation: string;
+  story: string;
+  impactType: 'meals_served' | 'books_distributed' | 'students_supported' | 'trees_planted' | 'scholarships_provided';
+  relatedDonationId?: string;
+  relatedCampaign: string;
+  date: string;
+  imageUrl?: string;
+  isPublic: boolean;
+  coordinates?: {
+    latitude: number;
+    longitude: number;
+  };
+}
