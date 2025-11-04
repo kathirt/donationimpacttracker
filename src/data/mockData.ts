@@ -413,7 +413,7 @@ export const mockBeneficiaryUpdates: BeneficiaryUpdate[] = [
     beneficiaryAge: 17,
     beneficiaryLocation: 'Paris, France',
     story: 'The Digital Learning Initiative provided our school with tablets and internet access. As someone interested in coding, this opportunity has been incredible. I have been able to learn programming through online courses and even built my first website. I hope to study computer science at university next year.',
-    impactType: 'books_distributed',
+    impactType: 'students_supported',
     relatedDonationId: 'don-002',
     relatedCampaign: 'Digital Learning Initiative',
     date: '2024-01-08',

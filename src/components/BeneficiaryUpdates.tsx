@@ -54,7 +54,8 @@ export const BeneficiaryUpdates: React.FC = () => {
     { value: 'meals_served', label: 'Meals Served' },
     { value: 'books_distributed', label: 'Books Distributed' },
     { value: 'students_supported', label: 'Students Supported' },
-    { value: 'scholarships_provided', label: 'Scholarships' }
+    { value: 'scholarships_provided', label: 'Scholarships' },
+    { value: 'trees_planted', label: 'Trees Planted' }
   ];
 
   const getImpactIcon = (type: string) => {
@@ -63,6 +64,7 @@ export const BeneficiaryUpdates: React.FC = () => {
       case 'books_distributed': return '📚';
       case 'students_supported': return '👨‍🎓';
       case 'scholarships_provided': return '🎓';
+      case 'trees_planted': return '🌳';
       default: return '💝';
     }
   };
@@ -73,6 +75,7 @@ export const BeneficiaryUpdates: React.FC = () => {
       case 'books_distributed': return 'Books & Learning';
       case 'students_supported': return 'Student Support';
       case 'scholarships_provided': return 'Scholarship';
+      case 'trees_planted': return 'Environmental';
       default: return 'Impact';
     }
   };
