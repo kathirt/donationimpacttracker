@@ -1,12 +1,16 @@
 import * as crypto from 'crypto';
 import { ApiKey, ApiPermission } from '../../src/types';
 
+// Constants
+const API_KEY_PREFIX = 'sk_';
+const KEY_ID_PREFIX = 'key-';
+
 // Mock storage for API keys (in production, use a database)
 const apiKeys: Map<string, ApiKey> = new Map();
 
 // Initialize with a demo API key for testing
 const demoApiKey: ApiKey = {
-  id: 'key-demo-001',
+  id: KEY_ID_PREFIX + 'demo-001',
   key: 'demo_key_12345678901234567890123456789012',
   name: 'Demo API Key',
   organizationId: 'org-demo-001',
@@ -24,7 +28,7 @@ apiKeys.set(demoApiKey.key, demoApiKey);
  * Generate a new API key
  */
 export function generateApiKey(): string {
-  return 'sk_' + crypto.randomBytes(32).toString('hex');
+  return API_KEY_PREFIX + crypto.randomBytes(32).toString('hex');
 }
 
 /**
@@ -40,7 +44,7 @@ export function createApiKey(
 ): ApiKey {
   const key = generateApiKey();
   const apiKey: ApiKey = {
-    id: 'key-' + crypto.randomBytes(8).toString('hex'),
+    id: KEY_ID_PREFIX + crypto.randomBytes(8).toString('hex'),
     key,
     name,
     organizationId,

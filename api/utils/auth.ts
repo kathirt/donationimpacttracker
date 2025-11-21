@@ -2,6 +2,9 @@ import { Context, HttpRequest } from "@azure/functions";
 import { validateApiKey, hasPermission, recordUsage, checkRateLimit } from './apiKeyManager';
 import { ApiPermission } from '../../src/types';
 
+// Constants
+const RATE_LIMIT_WINDOW_MS = 3600000; // 1 hour in milliseconds
+
 /**
  * Authentication middleware for Azure Functions
  */
@@ -61,7 +64,7 @@ export function authenticateApiKey(context: Context, req: HttpRequest): {
     ...context.res.headers,
     'X-RateLimit-Limit': validation.apiKey.rateLimit.toString(),
     'X-RateLimit-Remaining': rateLimit.remaining.toString(),
-    'X-RateLimit-Reset': new Date(Date.now() + 3600000).toISOString()
+    'X-RateLimit-Reset': new Date(Date.now() + RATE_LIMIT_WINDOW_MS).toISOString()
   };
 
   context.log('API request authenticated', {

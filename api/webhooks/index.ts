@@ -2,6 +2,10 @@ import { AzureFunction, Context, HttpRequest } from "@azure/functions";
 import * as crypto from 'crypto';
 import { authenticateApiKey, requirePermission, sendUnauthorizedResponse, sendForbiddenResponse } from "../utils/auth";
 
+// Constants
+const WEBHOOK_SECRET_PREFIX = 'whsec_';
+const WEBHOOK_ID_PREFIX = 'wh-';
+
 // Mock webhook subscriptions storage
 const webhookSubscriptions: any[] = [];
 
@@ -182,11 +186,11 @@ async function handleCreateWebhook(context: Context, req: HttpRequest, organizat
   }
 
   // Generate webhook secret
-  const secret = 'whsec_' + crypto.randomBytes(24).toString('hex');
+  const secret = WEBHOOK_SECRET_PREFIX + crypto.randomBytes(24).toString('hex');
 
   // Create webhook subscription
   const webhook = {
-    id: 'wh-' + crypto.randomBytes(8).toString('hex'),
+    id: WEBHOOK_ID_PREFIX + crypto.randomBytes(8).toString('hex'),
     organizationId,
     url,
     events,

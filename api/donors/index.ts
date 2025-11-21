@@ -1,5 +1,9 @@
 import { AzureFunction, Context, HttpRequest } from "@azure/functions";
+import * as crypto from 'crypto';
 import { authenticateApiKey, requirePermission, sendUnauthorizedResponse, sendForbiddenResponse } from "../utils/auth";
+
+// Constants
+const DONOR_ID_PREFIX = 'donor-';
 
 // Mock donor data (in production, this would come from a database)
 const mockDonors = [
@@ -222,9 +226,9 @@ async function handleCreateDonor(context: Context, req: HttpRequest): Promise<vo
     return;
   }
 
-  // Generate new ID
+  // Generate new ID using crypto for uniqueness
   const newDonor = {
-    id: `donor-${Date.now()}`,
+    id: DONOR_ID_PREFIX + crypto.randomBytes(8).toString('hex'),
     name: donor.name,
     email: donor.email,
     totalDonated: donor.totalDonated || 0,
