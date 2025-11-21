@@ -77,3 +77,66 @@ export interface FilterOptions {
   };
   impactType?: string;
 }
+
+export interface ApiKey {
+  id: string;
+  key: string;
+  name: string;
+  organizationId: string;
+  organizationName: string;
+  permissions: ApiPermission[];
+  rateLimit: number; // requests per hour
+  isActive: boolean;
+  createdAt: string;
+  expiresAt?: string;
+  lastUsedAt?: string;
+  usageCount: number;
+}
+
+export type ApiPermission = 
+  | 'donations:read'
+  | 'donations:write'
+  | 'donors:read'
+  | 'donors:write'
+  | 'campaigns:read'
+  | 'campaigns:write'
+  | 'impact:read'
+  | 'impact:write'
+  | 'webhooks:manage';
+
+export interface Organization {
+  id: string;
+  name: string;
+  email: string;
+  type: 'nonprofit' | 'corporate' | 'developer';
+  apiKeys: string[]; // API key IDs
+  createdAt: string;
+  isVerified: boolean;
+}
+
+export interface WebhookSubscription {
+  id: string;
+  organizationId: string;
+  url: string;
+  events: WebhookEvent[];
+  secret: string;
+  isActive: boolean;
+  createdAt: string;
+  lastTriggeredAt?: string;
+}
+
+export type WebhookEvent = 
+  | 'donation.created'
+  | 'donation.updated'
+  | 'campaign.created'
+  | 'campaign.updated'
+  | 'impact.recorded';
+
+export interface ApiRequest {
+  apiKeyId: string;
+  endpoint: string;
+  method: string;
+  timestamp: string;
+  responseStatus: number;
+  responseTime: number;
+}
