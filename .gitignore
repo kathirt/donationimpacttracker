@@ -149,3 +149,4 @@ DEPLOYMENT_COMPLETE.md
 *.secrets
 secrets.json
 local.settings.json
+API_IMPLEMENTATION_COMPLETE.md
