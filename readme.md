@@ -20,6 +20,9 @@ Create a web-based tracker that:
 - **Narrative Generator**: Use Azure OpenAI to summarize impact stories and generate donor communications
 - **Donor View**: Filter by donor, campaign, or region for personalized dashboards
 - **Real-time Updates**: Dynamic data visualization with responsive design
+- **Public/Private API**: Comprehensive REST API for organizations and developers to sync and integrate donation data
+- **Webhook Support**: Real-time notifications for donation and impact events
+- **API Authentication**: Secure API key-based authentication with rate limiting
 
 ## �️ Tech Stack
 
@@ -86,6 +89,11 @@ func start
 - Azure Functions backend structure
 - Mock data for education nonprofit
 - Deployment configuration for Azure Static Web Apps
+- **Comprehensive REST API for data integration**
+- **API key authentication and authorization**
+- **Rate limiting and usage tracking**
+- **Webhook support for real-time notifications**
+- **API documentation with code examples**
 
 ### 🔄 In Progress
 - Power BI embedded dashboards
@@ -129,9 +137,14 @@ Frontend (React + TypeScript)
 └── Types (TypeScript interfaces)
 
 Backend (Azure Functions)
-├── Donations API
-├── Impact Metrics API
-└── Data Processing
+├── Donations API (GET, POST)
+├── Donors API (GET, POST, PUT)
+├── Campaigns API (GET)
+├── Impact Metrics API (GET)
+├── Impact Summary API (GET)
+├── Webhooks API (GET, POST, DELETE)
+├── API Authentication & Authorization
+└── Rate Limiting & Usage Tracking
 
 Azure Services
 ├── Static Web Apps (Hosting)
@@ -153,6 +166,8 @@ The application includes realistic mock data for:
 - **Individual Donors**: Track personal donation impact
 - **Nonprofit Teams**: Communicate impact to stakeholders
 - **CSR Departments**: Monitor corporate giving outcomes
+- **Developers**: Integrate donation data via REST API
+- **Organizations**: Sync data between systems using webhooks
 
 ## 🔄 Future Enhancements
 
@@ -161,6 +176,70 @@ The application includes realistic mock data for:
 - Mobile app development
 - Multi-language support
 - Blockchain integration for transparency
+
+## 🔌 API Access
+
+The Donation Impact Tracker provides a comprehensive REST API for organizations and developers to sync and integrate donation data.
+
+### Key API Features
+
+- **Secure Authentication**: API key-based authentication with rate limiting
+- **Comprehensive Endpoints**: Access donations, donors, campaigns, and impact metrics
+- **Real-time Webhooks**: Subscribe to events like new donations or impact records
+- **Flexible Filtering**: Query data by region, date range, campaign, and more
+- **Aggregated Analytics**: Get summary statistics and aggregated impact data
+
+### Quick Start
+
+1. **Get API Key**: Use the demo key for testing:
+   ```
+   demo_key_12345678901234567890123456789012
+   ```
+
+2. **Make Your First Request**:
+   ```bash
+   curl -X GET "https://your-app.azurewebsites.net/api/donations" \
+     -H "Authorization: Bearer demo_key_12345678901234567890123456789012"
+   ```
+
+3. **Set Up Webhooks** (optional):
+   ```bash
+   curl -X POST "https://your-app.azurewebsites.net/api/webhooks" \
+     -H "Authorization: Bearer YOUR_API_KEY" \
+     -H "Content-Type: application/json" \
+     -d '{
+       "url": "https://your-app.com/webhook",
+       "events": ["donation.created", "impact.recorded"]
+     }'
+   ```
+
+### Available Endpoints
+
+- `GET /api/donations` - List all donations with filtering
+- `POST /api/donations` - Create new donation
+- `GET /api/donors` - List all donors
+- `GET /api/donors/{id}` - Get specific donor
+- `GET /api/campaigns` - List all campaigns
+- `GET /api/campaigns/{id}` - Get specific campaign
+- `GET /api/impact-metrics` - List impact metrics with aggregation support
+- `GET /api/impact-summary` - Get overall impact summary
+- `POST /api/webhooks` - Register webhook subscription
+- `GET /api/webhooks` - List webhook subscriptions
+- `DELETE /api/webhooks/{id}` - Delete webhook subscription
+
+### Full Documentation
+
+For complete API documentation, code examples, and integration guides, see:
+**[API_DOCUMENTATION.md](API_DOCUMENTATION.md)**
+
+The documentation includes:
+- Authentication guide
+- All endpoint specifications
+- Request/response examples
+- Error handling
+- Code samples in JavaScript, Python, and cURL
+- Webhook setup and verification
+- Rate limiting details
 
 ## 🤝 Contributing
 
