@@ -1,61 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { Donor } from '../types';
+import { Donor, Donation } from '../types';
 import { ImpactNarrative } from './ImpactNarrative';
+import { EmailConfirmation } from './EmailConfirmation';
+import { downloadReceipt, downloadYearEndSummary } from '../services/receiptService';
+import { mockDonors, mockDonations } from '../data/mockData';
 import './DonorView.css';
+
+const CURRENT_YEAR = new Date().getFullYear();
 
 export const DonorView: React.FC = () => {
   const [donors, setDonors] = useState<Donor[]>([]);
   const [loading, setLoading] = useState(true);
+  const [emailTarget, setEmailTarget] = useState<{ donation: Donation; donor: Donor } | null>(null);
 
   useEffect(() => {
-    // Simulate API call to fetch donors
-    const fetchDonors = async () => {
-      const mockDonors: Donor[] = [
-        {
-          id: 'donor-1',
-          name: 'John Doe',
-          email: 'john.doe@email.com',
-          totalDonated: 2500,
-          donationCount: 8,
-          preferredCampaigns: ['School Lunch Program', 'Digital Learning Initiative'],
-          joinDate: '2023-03-15'
-        },
-        {
-          id: 'donor-2',
-          name: 'Jane Smith',
-          email: 'jane.smith@email.com',
-          totalDonated: 1800,
-          donationCount: 6,
-          preferredCampaigns: ['Scholarship Fund', 'Library Books Drive'],
-          joinDate: '2023-05-22'
-        },
-        {
-          id: 'donor-3',
-          name: 'Education Foundation',
-          email: 'contact@educfoundation.org',
-          totalDonated: 15000,
-          donationCount: 25,
-          preferredCampaigns: ['School Lunch Program', 'Scholarship Fund', 'Digital Learning Initiative'],
-          joinDate: '2022-09-10'
-        },
-        {
-          id: 'donor-4',
-          name: 'Tech for Good',
-          email: 'donate@techforgood.org',
-          totalDonated: 8500,
-          donationCount: 15,
-          preferredCampaigns: ['Digital Learning Initiative', 'Library Books Drive'],
-          joinDate: '2023-01-08'
-        }
-      ];
-
-      setTimeout(() => {
-        setDonors(mockDonors);
-        setLoading(false);
-      }, 800);
-    };
-
-    fetchDonors();
+    setTimeout(() => {
+      setDonors(mockDonors);
+      setLoading(false);
+    }, 800);
   }, []);
 
   const formatCurrency = (amount: number) => {
@@ -72,6 +34,42 @@ export const DonorView: React.FC = () => {
       month: 'long',
       day: 'numeric'
     });
+  };
+
+  const getDonorDonations = (donorId: string): Donation[] =>
+    mockDonations.filter(d => d.donorId === donorId);
+
+  const getLatestDonation = (donorId: string): Donation | undefined => {
+    const donations = getDonorDonations(donorId);
+    if (donations.length === 0) return undefined;
+    return donations.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())[0];
+  };
+
+  const handleEmailClick = (donor: Donor) => {
+    const latest = getLatestDonation(donor.id);
+    if (!latest) return;
+    setEmailTarget({ donation: latest, donor });
+  };
+
+  const handleDownloadReceipt = (donor: Donor) => {
+    const latest = getLatestDonation(donor.id);
+    if (!latest) return;
+    downloadReceipt(latest, donor);
+  };
+
+  const handleDownloadYearEnd = (donor: Donor) => {
+    const allDonations = getDonorDonations(donor.id);
+    if (allDonations.length === 0) return;
+
+    const currentYearDonations = allDonations.filter(
+      d => new Date(d.date).getFullYear() === CURRENT_YEAR
+    );
+    const targetDonations = currentYearDonations.length > 0 ? currentYearDonations : allDonations;
+    const year =
+      currentYearDonations.length > 0
+        ? CURRENT_YEAR
+        : new Date(targetDonations[0].date).getFullYear();
+    downloadYearEndSummary(donor, targetDonations, year);
   };
 
   if (loading) {
@@ -160,10 +158,44 @@ export const DonorView: React.FC = () => {
               <div className="donor-join-date">
                 <span>Member since {formatDate(donor.joinDate)}</span>
               </div>
+              <div className="donor-actions">
+                <button
+                  className="donor-action-btn receipt-btn"
+                  onClick={() => handleDownloadReceipt(donor)}
+                  disabled={getDonorDonations(donor.id).length === 0}
+                  title="Download latest receipt"
+                >
+                  ⬇️ Receipt
+                </button>
+                <button
+                  className="donor-action-btn tax-btn"
+                  onClick={() => handleDownloadYearEnd(donor)}
+                  disabled={getDonorDonations(donor.id).length === 0}
+                  title="Download year-end tax summary"
+                >
+                  📄 Tax Summary
+                </button>
+                <button
+                  className="donor-action-btn email-btn"
+                  onClick={() => handleEmailClick(donor)}
+                  disabled={getDonorDonations(donor.id).length === 0}
+                  title="Email donation confirmation"
+                >
+                  📧 Email
+                </button>
+              </div>
             </div>
           </div>
         ))}
       </div>
+
+      {emailTarget && (
+        <EmailConfirmation
+          donation={emailTarget.donation}
+          donor={emailTarget.donor}
+          onClose={() => setEmailTarget(null)}
+        />
+      )}
     </div>
   );
 };
