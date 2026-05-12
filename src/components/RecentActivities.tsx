@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Donation, ImpactMetric, FilterOptions } from '../types';
+import { EmailConfirmation } from './EmailConfirmation';
+import { downloadReceipt } from '../services/receiptService';
 import './RecentActivities.css';
 
 interface RecentActivitiesProps {
@@ -10,6 +12,7 @@ export const RecentActivities: React.FC<RecentActivitiesProps> = ({ filters }) =
   const [recentDonations, setRecentDonations] = useState<Donation[]>([]);
   const [recentImpacts, setRecentImpacts] = useState<ImpactMetric[]>([]);
   const [loading, setLoading] = useState(true);
+  const [emailDonation, setEmailDonation] = useState<Donation | null>(null);
 
   useEffect(() => {
     // Simulate API call to fetch recent activities
@@ -167,6 +170,22 @@ export const RecentActivities: React.FC<RecentActivitiesProps> = ({ filters }) =
                     <span className="activity-region">{donation.region}</span>
                   </div>
                   <div className="activity-date">{formatDate(donation.date)}</div>
+                  <div className="activity-actions">
+                    <button
+                      className="action-btn receipt-btn"
+                      onClick={() => downloadReceipt(donation)}
+                      title="Download Receipt"
+                    >
+                      ⬇️ Receipt
+                    </button>
+                    <button
+                      className="action-btn email-btn"
+                      onClick={() => setEmailDonation(donation)}
+                      title="Email Confirmation"
+                    >
+                      📧 Email
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}
@@ -195,6 +214,13 @@ export const RecentActivities: React.FC<RecentActivitiesProps> = ({ filters }) =
           </div>
         </div>
       </div>
+
+      {emailDonation && (
+        <EmailConfirmation
+          donation={emailDonation}
+          onClose={() => setEmailDonation(null)}
+        />
+      )}
     </div>
   );
 };

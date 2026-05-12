@@ -174,6 +174,67 @@
   color: #9ca3af;
 }
 
+.donor-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+  flex-wrap: wrap;
+}
+
+.donor-action-btn {
+  flex: 1;
+  min-width: 80px;
+  padding: 0.5rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.1s;
+  white-space: nowrap;
+}
+
+.donor-action-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.donor-action-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.donor-action-btn.receipt-btn {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border-color: #bfdbfe;
+}
+
+.donor-action-btn.receipt-btn:hover:not(:disabled) {
+  background: #dbeafe;
+}
+
+.donor-action-btn.tax-btn {
+  background: #f5f3ff;
+  color: #6d28d9;
+  border-color: #ddd6fe;
+}
+
+.donor-action-btn.tax-btn:hover:not(:disabled) {
+  background: #ede9fe;
+}
+
+.donor-action-btn.email-btn {
+  background: #f0fdf4;
+  color: #15803d;
+  border-color: #bbf7d0;
+}
+
+.donor-action-btn.email-btn:hover:not(:disabled) {
+  background: #dcfce7;
+}
+
 @media (max-width: 768px) {
   .donor-header h1 {
     font-size: 2rem;

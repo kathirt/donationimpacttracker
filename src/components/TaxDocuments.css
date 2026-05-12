@@ -1,0 +1,365 @@
+.tax-documents {
+  min-height: 100vh;
+}
+
+.tax-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.tax-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.tax-header p {
+  font-size: 1.125rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Controls */
+
+.tax-controls {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  flex: 1;
+}
+
+.control-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.control-select {
+  padding: 0.625rem 0.875rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.9375rem;
+  color: #1f2937;
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  appearance: auto;
+}
+
+.control-select:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+/* Summary card */
+
+.tax-summary-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.75rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+}
+
+.summary-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.summary-donor-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.summary-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 1.125rem;
+  flex-shrink: 0;
+}
+
+.summary-donor-info h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.summary-email {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.summary-year-badge {
+  background: #4f46e5;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+/* Stats */
+
+.summary-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.summary-stat {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+}
+
+.summary-stat-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #4f46e5;
+  margin-bottom: 0.25rem;
+}
+
+.summary-stat-label {
+  font-size: 0.8125rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Breakdown */
+
+.summary-breakdown {
+  margin-bottom: 1.5rem;
+}
+
+.summary-breakdown h3,
+.donations-table-wrapper h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 0.75rem;
+}
+
+.breakdown-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.breakdown-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.625rem 0.875rem;
+  background: #f9fafb;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+
+.breakdown-campaign {
+  font-size: 0.875rem;
+  color: #374151;
+  font-weight: 500;
+}
+
+.breakdown-amount {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #059669;
+}
+
+/* Table */
+
+.donations-table-wrapper {
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+}
+
+.donations-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.donations-table th {
+  background: #4f46e5;
+  color: white;
+  padding: 0.625rem 0.875rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.donations-table td {
+  padding: 0.625rem 0.875rem;
+  border-bottom: 1px solid #e5e7eb;
+  color: #374151;
+}
+
+.donations-table tfoot td {
+  background: #f9fafb;
+  border-top: 2px solid #e5e7eb;
+  border-bottom: none;
+}
+
+.amount-col {
+  text-align: right;
+}
+
+/* Tax notice */
+
+.tax-notice-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: #fef3c7;
+  border: 1px solid #f59e0b;
+  border-radius: 6px;
+  padding: 0.875rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.tax-notice-icon {
+  font-size: 1.125rem;
+  flex-shrink: 0;
+}
+
+.tax-notice-box p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #92400e;
+  line-height: 1.5;
+}
+
+/* Actions */
+
+.summary-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.download-btn {
+  background: #4f46e5;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.download-btn:hover:not(:disabled) {
+  background: #4338ca;
+  transform: translateY(-1px);
+}
+
+.download-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Placeholder */
+
+.tax-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  background: white;
+  border-radius: 8px;
+  border: 2px dashed #e5e7eb;
+}
+
+.placeholder-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.tax-placeholder h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 0.5rem;
+}
+
+.tax-placeholder p {
+  color: #6b7280;
+  margin: 0;
+  max-width: 380px;
+  line-height: 1.6;
+}
+
+/* Empty state */
+
+.no-donations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1rem;
+  gap: 0.75rem;
+  color: #6b7280;
+  text-align: center;
+}
+
+.no-donations span {
+  font-size: 2.5rem;
+}
+
+.no-donations p {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .tax-header h1 {
+    font-size: 2rem;
+  }
+
+  .tax-controls {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .summary-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .summary-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
