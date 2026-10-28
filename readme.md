@@ -94,6 +94,42 @@ func start
 
 ## 🌐 Deployment
 
+### Intentionally vulnerable Autofix demo
+
+The standalone fixture in `demos/sql-injection-autofix` demonstrates SQL
+injection in an impact-summary region filter, inspired by issue #33. It does
+not implement that issue or connect to the dashboard or Azure Functions.
+**Do not deploy or merge this demo into production.** It uses only synthetic
+data in an in-memory SQLite database and binds to `127.0.0.1`.
+
+With Node.js 18 or newer:
+
+```bash
+cd demos/sql-injection-autofix
+npm ci
+npm test
+npm start
+```
+
+In another terminal:
+
+```bash
+curl --get http://127.0.0.1:3100/api/impact-summary \
+  --data-urlencode "region=Europe"
+curl --get http://127.0.0.1:3100/api/impact-summary \
+  --data-urlencode "region=Europe' OR '1'='1"
+```
+
+The first request returns one donation totaling 250; the injected request
+incorrectly returns all three donations totaling 850. The intended CodeQL
+finding is `js/sql-injection` at `db.all` in `server.js`; detection and Autofix
+availability depend on the repository's code scanning settings.
+
+Use the PR's code scanning alert to request a Copilot Autofix. The fix should
+bind the region as a SQL parameter instead of interpolating it. After fixing,
+rerun the tests and add a regression test asserting that the injected region
+returns zero donations, amount, and beneficiaries rather than all rows.
+
 The application is configured for deployment to Azure Static Web Apps. See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment instructions.
 
 ### Quick Deploy to Azure
