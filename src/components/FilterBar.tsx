@@ -26,6 +26,8 @@ export const FilterBar: React.FC<FilterBarProps> = ({ onFilterChange }) => {
         <label htmlFor="donor-filter">Donor:</label>
         <select
           id="donor-filter"
+          disabled
+          aria-describedby="unsupported-summary-filters"
           value={filters.donor || ''}
           onChange={(e) => handleFilterUpdate('donor', e.target.value || undefined)}
         >
@@ -41,6 +43,8 @@ export const FilterBar: React.FC<FilterBarProps> = ({ onFilterChange }) => {
         <label htmlFor="campaign-filter">Campaign:</label>
         <select
           id="campaign-filter"
+          disabled
+          aria-describedby="unsupported-summary-filters"
           value={filters.campaign || ''}
           onChange={(e) => handleFilterUpdate('campaign', e.target.value || undefined)}
         >
@@ -72,6 +76,8 @@ export const FilterBar: React.FC<FilterBarProps> = ({ onFilterChange }) => {
         <label htmlFor="impact-type-filter">Impact Type:</label>
         <select
           id="impact-type-filter"
+          disabled
+          aria-describedby="unsupported-summary-filters"
           value={filters.impactType || ''}
           onChange={(e) => handleFilterUpdate('impactType', e.target.value || undefined)}
         >
@@ -83,6 +89,9 @@ export const FilterBar: React.FC<FilterBarProps> = ({ onFilterChange }) => {
         </select>
       </div>
 
+      <p id="unsupported-summary-filters">
+        Summary filtering supports region only. Donor, campaign, and impact type filters are not available.
+      </p>
       <div className="filter-actions">
         <button onClick={clearFilters} className="clear-filters-btn">
           Clear All Filters

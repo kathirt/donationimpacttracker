@@ -5,70 +5,38 @@ import { FilterBar } from './FilterBar';
 import { ImpactChart } from './ImpactChart';
 import { RecentActivities } from './RecentActivities';
 import { ImpactNarrative } from './ImpactNarrative';
+import { impactApi } from '../services/api';
 import './Dashboard.css';
 
 export const Dashboard: React.FC = () => {
   const [impactSummary, setImpactSummary] = useState<ImpactSummary | null>(null);
   const [filters, setFilters] = useState<FilterOptions>({});
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+  const [retryCount, setRetryCount] = useState(0);
 
   useEffect(() => {
-    // Simulate API call to fetch impact summary
+    let active = true;
     const fetchImpactSummary = async () => {
+      setLoading(true);
+      setError(false);
       try {
-        setLoading(true);
-        // TODO: Replace with actual API call
-        const mockSummary: ImpactSummary = {
-          totalDonations: 1247,
-          totalAmount: 185420,
-          totalBeneficiaries: 3892,
-          impactsByType: {
-            meals_served: { total: 15640, description: "Meals served to students" },
-            books_distributed: { total: 4820, description: "Educational books distributed" },
-            students_supported: { total: 2150, description: "Students receiving scholarships" },
-            scholarships_provided: { total: 89, description: "Full scholarships awarded" }
-          },
-          regionBreakdown: {
-            "North America": { donations: 420, amount: 78000, beneficiaries: 1200 },
-            "Europe": { donations: 315, amount: 52000, beneficiaries: 890 },
-            "Asia": { donations: 298, amount: 35000, beneficiaries: 980 },
-            "Africa": { donations: 214, amount: 20420, beneficiaries: 822 }
-          }
-        };
-        
-        setTimeout(() => {
-          setImpactSummary(mockSummary);
-          setLoading(false);
-        }, 1000);
+        const summary = await impactApi.getImpactSummary(filters);
+        if (active) setImpactSummary(summary);
       } catch (error) {
-        console.error('Error fetching impact summary:', error);
-        setLoading(false);
+        if (active) setError(true);
+      } finally {
+        if (active) setLoading(false);
       }
     };
 
     fetchImpactSummary();
-  }, [filters]);
+    return () => { active = false; };
+  }, [filters, retryCount]);
 
   const handleFilterChange = (newFilters: FilterOptions) => {
     setFilters(newFilters);
   };
-
-  if (loading) {
-    return (
-      <div className="dashboard-loading">
-        <div className="loading-spinner"></div>
-        <p>Loading impact data...</p>
-      </div>
-    );
-  }
-
-  if (!impactSummary) {
-    return (
-      <div className="dashboard-error">
-        <p>Failed to load impact data. Please try again later.</p>
-      </div>
-    );
-  }
 
   return (
     <div className="dashboard">
@@ -78,30 +46,43 @@ export const Dashboard: React.FC = () => {
       </div>
       
       <FilterBar onFilterChange={handleFilterChange} />
-      
-      <div className="dashboard-content">
-        {/* AI-Generated Impact Narrative */}
-        <div className="dashboard-section full-width">
-          <ImpactNarrative 
-            type="summary"
-            region={filters.region || 'global'}
-          />
+
+      {loading && (
+        <div className="dashboard-loading" role="status">
+          <div className="loading-spinner"></div>
+          <p>Loading impact data...</p>
         </div>
-        
-        <div className="dashboard-grid">
-          <div className="dashboard-section">
-            <ImpactMetrics summary={impactSummary} />
-          </div>
-          
-          <div className="dashboard-section">
-            <ImpactChart summary={impactSummary} />
-          </div>
-          
+      )}
+      {error && (
+        <div className="dashboard-error" role="alert">
+          <p>Failed to load impact data. Please retry or change the region.</p>
+          <button onClick={() => setRetryCount(count => count + 1)}>Retry</button>
+        </div>
+      )}
+      {!loading && !error && impactSummary && (
+        <div className="dashboard-content">
+          {/* AI-Generated Impact Narrative */}
           <div className="dashboard-section full-width">
-            <RecentActivities filters={filters} />
+            <ImpactNarrative
+              type="summary"
+              region={filters.region || 'global'}
+            />
+          </div>
+          <div className="dashboard-grid">
+            <div className="dashboard-section">
+              <ImpactMetrics summary={impactSummary} />
+            </div>
+
+            <div className="dashboard-section">
+              <ImpactChart summary={impactSummary} />
+            </div>
+
+            <div className="dashboard-section full-width">
+              <RecentActivities filters={filters} />
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
