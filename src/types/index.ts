@@ -15,7 +15,7 @@ export interface Donation {
 export interface ImpactMetric {
   id: string;
   donationId: string;
-  type: 'meals_served' | 'books_distributed' | 'students_supported' | 'trees_planted' | 'scholarships_provided';
+  type: 'meals_served' | 'books_distributed' | 'tablets_distributed' | 'students_supported' | 'trees_planted' | 'scholarships_provided';
   value: number;
   description: string;
   region: string;
@@ -48,10 +48,12 @@ export interface Campaign {
   impactTypes: string[];
 }
 
+export type ImpactDataSource = 'sample' | 'verified' | 'unavailable';
+
 export interface ImpactSummary {
   totalDonations: number;
   totalAmount: number;
-  totalBeneficiaries: number;
+  totalBeneficiaries: number | null;
   impactsByType: {
     [key: string]: {
       total: number;
@@ -62,7 +64,7 @@ export interface ImpactSummary {
     [region: string]: {
       donations: number;
       amount: number;
-      beneficiaries: number;
+      beneficiaries: number | null;
     };
   };
 }

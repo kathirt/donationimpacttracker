@@ -1,3 +1,8 @@
+import { ImpactDataSource, ImpactMetric } from '../types';
+import { aggregateImpactMetrics } from '../data/impactData';
+
+type NarrativeMetric = Pick<ImpactMetric, 'type' | 'value' | 'description'>;
+
 // Azure OpenAI service for generating impact narratives and donor communications
 export interface NarrativeRequest {
   type: 'impact_summary' | 'donor_story' | 'campaign_update';
@@ -6,12 +11,8 @@ export interface NarrativeRequest {
     donationAmount?: number;
     campaign?: string;
     region?: string;
-    impactMetrics?: {
-      type: string;
-      value: number;
-      description: string;
-    }[];
-    totalBeneficiaries?: number;
+    impactMetrics?: NarrativeMetric[];
+    dataSource?: ImpactDataSource;
   };
 }
 
@@ -46,7 +47,7 @@ export class AzureOpenAIService {
     switch (type) {
       case 'impact_summary':
         return {
-          narrative: `Through the generosity of donors like you, we've achieved remarkable impact in ${data.region || 'communities worldwide'}. Your collective contributions have reached ${data.totalBeneficiaries?.toLocaleString() || '2,500'} beneficiaries across our education programs. From providing essential school supplies to funding nutrition programs, every donation creates a ripple effect of positive change. The children and families we serve are not just statistics – they're individuals whose lives are being transformed through education and support.`,
+          narrative: this.getImpactNarrative(data),
           tone: 'inspiring',
           length: 'medium'
         };
@@ -60,7 +61,7 @@ export class AzureOpenAIService {
 
       case 'campaign_update':
         return {
-          narrative: `The ${data.campaign || 'Education Campaign'} continues to show incredible progress in ${data.region || 'our target communities'}. Since launch, we've seen ${data.totalBeneficiaries?.toLocaleString() || '450'} students directly benefit from this initiative. Our recent achievements include ${this.getImpactDescription(data.impactMetrics)}. As we move forward, we remain committed to transparency and accountability, ensuring every dollar donated creates maximum impact for the children and families we serve.`,
+          narrative: this.getImpactNarrative(data),
           tone: 'informative',
           length: 'long'
         };
@@ -74,20 +75,35 @@ export class AzureOpenAIService {
     }
   }
 
-  private static getImpactDescription(metrics?: { type: string; value: number; description: string }[]): string {
+  private static getImpactNarrative(data: NarrativeRequest['data']): string {
+    const totals = Object.values(aggregateImpactMetrics(data.impactMetrics || []));
+    if (!data.dataSource || data.dataSource === 'unavailable' || totals.length === 0) {
+      return 'Not enough verified impact data is available to generate a narrative for the selected filters.';
+    }
+
+    const source = data.dataSource === 'sample'
+      ? 'Sample data only — illustrative, not verified impact.'
+      : 'Based on verified activity data.';
+    const counts = totals.map(metric => `${metric.total.toLocaleString()} ${metric.description}`).join('; ');
+    return `${source} For ${data.campaign ? `${data.campaign} in ` : ''}${data.region || 'all regions'}, the selected records show: ${counts}. These activity counts are not a count of unique beneficiaries.`;
+  }
+
+  private static getImpactDescription(metrics?: NarrativeMetric[]): string {
     if (!metrics || metrics.length === 0) {
       return 'provide educational resources and support to students in need';
     }
 
     const descriptions = metrics.map(metric => {
       switch (metric.type) {
-        case 'meals':
+        case 'meals_served':
           return `serve ${metric.value.toLocaleString()} nutritious meals`;
-        case 'books':
+        case 'books_distributed':
           return `distribute ${metric.value.toLocaleString()} educational books`;
-        case 'students':
+        case 'tablets_distributed':
+          return `distribute ${metric.value.toLocaleString()} learning tablets`;
+        case 'students_supported':
           return `support ${metric.value.toLocaleString()} students`;
-        case 'scholarships':
+        case 'scholarships_provided':
           return `provide ${metric.value.toLocaleString()} scholarships`;
         default:
           return metric.description;
@@ -120,14 +136,14 @@ export class AzureOpenAIService {
   }
 
   // Generate campaign progress update
-  static async generateCampaignUpdate(campaign: string, region: string, metrics: any[]): Promise<string> {
+  static async generateCampaignUpdate(campaign: string, region: string, metrics: NarrativeMetric[], dataSource: ImpactDataSource = 'unavailable'): Promise<string> {
     const request: NarrativeRequest = {
       type: 'campaign_update',
       data: {
         campaign,
         region,
         impactMetrics: metrics,
-        totalBeneficiaries: metrics.reduce((sum, m) => sum + m.value, 0)
+        dataSource
       }
     };
 
@@ -136,12 +152,12 @@ export class AzureOpenAIService {
   }
 
   // Generate overall impact summary
-  static async generateImpactSummary(region: string, totalBeneficiaries: number, metrics: any[]): Promise<string> {
+  static async generateImpactSummary(region: string, metrics: NarrativeMetric[], dataSource: ImpactDataSource = 'unavailable'): Promise<string> {
     const request: NarrativeRequest = {
       type: 'impact_summary',
       data: {
         region,
-        totalBeneficiaries,
+        dataSource,
         impactMetrics: metrics
       }
     };

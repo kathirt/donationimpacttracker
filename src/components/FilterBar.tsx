@@ -78,6 +78,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({ onFilterChange }) => {
           <option value="">All Types</option>
           <option value="meals_served">Meals Served</option>
           <option value="books_distributed">Books Distributed</option>
+          <option value="tablets_distributed">Tablets Distributed</option>
           <option value="students_supported">Students Supported</option>
           <option value="scholarships_provided">Scholarships Provided</option>
         </select>
