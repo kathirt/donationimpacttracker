@@ -65,7 +65,17 @@ Create a web-based tracker that:
 5. **Open the application**:
    Navigate to [http://localhost:3000](http://localhost:3000)
 
-### Azure Functions (Optional)
+### Azure Functions
+The dashboard loads its demo summary from `GET /api/impact-summary`. An optional
+`region` query parameter filters totals, impact distribution, and regional charts
+using the same regional records. A region with no records returns a zero summary.
+Donor, campaign, impact type, and date filtering are not supported for summaries:
+the dashboard disables unsupported controls and the API returns HTTP 400 for
+non-empty unsupported query parameters. API failures offer Retry without showing
+old data as the newly selected region.
+For local dashboard data, run the API below and start the frontend with
+`REACT_APP_API_URL=http://localhost:7071/api npm start`.
+
 To run the backend API locally:
 
 ```bash

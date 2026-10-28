@@ -99,12 +99,14 @@ export const impactApi = {
 
   // Get impact summary
   getImpactSummary: async (filters?: FilterOptions): Promise<ImpactSummary> => {
+    if (filters?.donor || filters?.campaign || filters?.impactType ||
+        filters?.dateRange?.start || filters?.dateRange?.end) {
+      throw new Error('Impact summary supports region filtering only.');
+    }
     const params = new URLSearchParams();
     if (filters?.region) params.append('region', filters.region);
-    if (filters?.campaign) params.append('campaign', filters.campaign);
-    if (filters?.donor) params.append('donor', filters.donor);
     
-    const response = await apiClient.get(`/impact/summary?${params.toString()}`);
+    const response = await apiClient.get(`/impact-summary?${params.toString()}`);
     return response.data;
   },
 
