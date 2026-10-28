@@ -37,16 +37,17 @@ async function createDemoApp() {
       return;
     }
 
-    // Intentionally vulnerable Autofix fixture; never deploy or use real data.
-    const where = region ? ` WHERE region = '${region}'` : '';
+    // Use parameter binding to avoid SQL injection from user-controlled input.
+    const where = region ? ' WHERE region = ?' : '';
     const query = `
       SELECT COUNT(*) AS totalDonations,
              COALESCE(SUM(amount), 0) AS totalAmount,
              COALESCE(SUM(beneficiaries), 0) AS totalBeneficiaries
       FROM donations${where}
     `;
+    const params = region ? [region] : [];
 
-    db.all(query, (error, rows) => {
+    db.all(query, params, (error, rows) => {
       if (error) {
         next(error);
         return;
