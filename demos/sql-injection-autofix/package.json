@@ -1,0 +1,17 @@
+{
+  "name": "impact-summary-sql-injection-autofix-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Intentionally vulnerable, localhost-only Copilot Autofix demo using synthetic data",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test server.test.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "sqlite3": "^5.1.7"
+  }
+}
