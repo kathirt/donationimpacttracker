@@ -99,7 +99,7 @@ export const mockImpactMetrics: ImpactMetric[] = [
   {
     id: 'imp-002',
     donationId: 'don-002',
-    type: 'books_distributed',
+    type: 'tablets_distributed',
     value: 25,
     description: '25 digital learning tablets distributed to rural schools',
     region: 'Europe',
@@ -248,7 +248,7 @@ export const mockCampaigns: Campaign[] = [
     region: 'Global',
     startDate: '2024-02-01',
     endDate: '2024-08-31',
-    impactTypes: ['books_distributed', 'students_supported']
+    impactTypes: ['tablets_distributed', 'students_supported']
   },
   {
     id: 'camp-003',

@@ -34,7 +34,7 @@ export const ImpactMetrics: React.FC<ImpactMetricsProps> = ({ summary }) => {
     },
     {
       title: 'Beneficiaries',
-      value: formatNumber(summary.totalBeneficiaries),
+      value: summary.totalBeneficiaries === null ? 'Unavailable' : formatNumber(summary.totalBeneficiaries),
       icon: '👥',
       color: '#dc2626'
     }

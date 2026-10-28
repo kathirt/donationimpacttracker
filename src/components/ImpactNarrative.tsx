@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { AzureOpenAIService } from '../services/openai';
-import { mockImpactMetrics, getImpactMetricsByRegion } from '../data/mockData';
+import { ImpactDataSource, ImpactMetric } from '../types';
 import './ImpactNarrative.css';
 
 interface ImpactNarrativeProps {
@@ -9,34 +9,47 @@ interface ImpactNarrativeProps {
   donationAmount?: number;
   campaign?: string;
   region?: string;
+  metrics?: ImpactMetric[];
+  dataSource?: ImpactDataSource;
 }
+
+const emptyMetrics: ImpactMetric[] = [];
 
 export const ImpactNarrative: React.FC<ImpactNarrativeProps> = ({
   type,
   donorName,
   donationAmount,
   campaign,
-  region
+  region,
+  metrics = emptyMetrics,
+  dataSource = 'unavailable'
 }) => {
   const [narrative, setNarrative] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string>('');
+  const requestId = useRef(0);
 
   const generateNarrative = useCallback(async () => {
+    const currentRequest = ++requestId.current;
     setLoading(true);
     setError('');
+    setNarrative('');
+
+    if (type !== 'donor' && (dataSource === 'unavailable' || metrics.length === 0)) {
+      setNarrative('Not enough verified impact data is available to generate a narrative for the selected filters.');
+      setLoading(false);
+      return;
+    }
     
     try {
       let generatedNarrative = '';
       
       switch (type) {
         case 'summary':
-          const allMetrics = mockImpactMetrics;
-          const totalBeneficiaries = allMetrics.reduce((sum, metric) => sum + metric.value, 0);
           generatedNarrative = await AzureOpenAIService.generateImpactSummary(
             region || 'global communities',
-            totalBeneficiaries,
-            allMetrics
+            metrics,
+            dataSource
           );
           break;
           
@@ -52,27 +65,28 @@ export const ImpactNarrative: React.FC<ImpactNarrativeProps> = ({
           
         case 'campaign':
           if (campaign && region) {
-            const regionMetrics = getImpactMetricsByRegion(region);
             generatedNarrative = await AzureOpenAIService.generateCampaignUpdate(
               campaign,
               region,
-              regionMetrics
+              metrics,
+              dataSource
             );
           }
           break;
       }
       
-      setNarrative(generatedNarrative);
+      if (currentRequest === requestId.current) setNarrative(generatedNarrative);
     } catch (err) {
-      setError('Failed to generate narrative. Please try again.');
+      if (currentRequest === requestId.current) setError('Failed to generate narrative. Please try again.');
       console.error('Narrative generation error:', err);
     } finally {
-      setLoading(false);
+      if (currentRequest === requestId.current) setLoading(false);
     }
-  }, [type, donorName, donationAmount, campaign, region]);
+  }, [type, donorName, donationAmount, campaign, region, metrics, dataSource]);
 
   useEffect(() => {
     generateNarrative();
+    return () => { requestId.current += 1; };
   }, [generateNarrative]);
 
   if (loading) {
@@ -128,17 +142,22 @@ export const ImpactNarrative: React.FC<ImpactNarrativeProps> = ({
         <div className="ai-icon">🤖</div>
         <div className="narrative-title">
           <h3>{getTitle()}</h3>
-          <span className="ai-badge">AI-Generated</span>
+          <span className="ai-badge">Demo narrative</span>
         </div>
       </div>
       
       <div className="narrative-content">
+        <p>{dataSource === 'sample'
+          ? 'Sample data — not verified impact'
+          : dataSource === 'verified' && metrics.length > 0
+            ? 'Verified activity data'
+            : 'Impact data unavailable'}</p>
         <p>{narrative}</p>
       </div>
       
       <div className="narrative-footer">
         <div className="narrative-meta">
-          <span className="powered-by">Powered by Azure OpenAI</span>
+          <span className="powered-by">Template-generated preview</span>
           <button onClick={generateNarrative} className="regenerate-button">
             🔄 Regenerate
           </button>
